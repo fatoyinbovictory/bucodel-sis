@@ -1,3 +1,27 @@
 .container {
-  margin: 95px 15px 15px;
+  margin: 0px;
+  min-height: 100vh;
+}
+
+.container.landing {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.landing-header1 {
+  font-size: 2.9rem;
+  color: var(--gold);
+  margin: -5px 20px;
+}
+
+.landing-header {
+  font-size: 2.6rem;
+  color: white;
+  margin: 0 20px 5px;
+}
+
+.landing-subheader {
+  margin: 0 20px;
+  color: white;
 }

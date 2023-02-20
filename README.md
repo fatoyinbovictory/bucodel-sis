@@ -23,7 +23,9 @@ This is the GitHub repository for our final year project on the design and imple
 
 ## Installation
 
-1. Clone the repository: git clone <https://github.com/fatoyinbovictory/bucodel-sis.git>
+In a terminal, do the following:
+
+1. Clone the repository: `git clone https://github.com/fatoyinbovictory/bucodel-sis.git`
 2. Install dependencies: `npm install`
 3. Start the server: `npm start`
 ## Usage
