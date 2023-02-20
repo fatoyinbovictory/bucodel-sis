@@ -1,0 +1,32 @@
+/* *{
+    outline: 2px solid green;
+} */
+.nav-container {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: #fff;
+  height: 80px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.nav-image {
+  height: 70px;
+  width: 160px;
+  margin: -12px auto 0 0;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-list:first-child{
+    justify-content: flex-start;
+}
+
+.nav-item {
+  margin: 10px 70px;
+  list-style: none;
+}

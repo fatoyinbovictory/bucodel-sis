@@ -2,7 +2,7 @@
 
 ### Design and Implementation of Students Information System for BUCODeL
 
-This is the GitHub repository for our final year project on the design and implementation of a student information system, in partial fulfilment of the requirements for the award of Bachelor of Science (B. Sc) Software Engineering. The project aims to develop a comprehensive system that can manage and organize student data in educational institutions.
+This is the GitHub repository for our final year project on the design and implementation of a student information system, in partial fulfilment of the requirements for the award of Bachelor of Science (B.Sc) Software Engineering. The project aims to develop a comprehensive system that can manage and organize student data in educational institutions.
 
 ## Features
 
@@ -36,4 +36,4 @@ Once the server is running, navigate to <http://localhost:3000> in your browser 
 
 ## Acknowledgments
 
-We would like to thank our project supervisor, Dr. Maitanmi, for his guidance and support throughout the development of this project. We would also like to thank our fellow classmates for their feedback and suggestions.
+We would like to thank our project supervisor, Dr. Maitanmi, for his guidance and support throughout the development of this project. We would also like to thank our fellow coursemates for their feedback and suggestions.
