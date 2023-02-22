@@ -75,6 +75,27 @@ main {
   margin-bottom: 30px;
 }
 
+.login-form {
+  display: grid;
+  place-content: center;
+  place-items: center;
+  min-height: 100vh;
+  margin-bottom: 30px;
+}
+
+.login-btn{
+  color: var(--background-color);
+  background-color: var(--blue);
+  height: 47px;
+  width: 300px;
+  border: none;
+  border-radius: 20px;
+}
+
+.form-row {
+  display: flex;
+}
+
 .form-row {
   display: flex;
 }
