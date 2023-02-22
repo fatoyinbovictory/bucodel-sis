@@ -3,17 +3,19 @@
 :root {
   --background-color: #ececec;
   --gold: #f1ba38;
-  --blue: #2C3E86;
+  --blue: #2c3e86;
   --text-color: #333333;
 }
 
-*{
-  font-family: 'Poppins', sans-serif;
+* {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
   background: #ececec;
 }
