@@ -1,0 +1,24 @@
+.profile-container {
+  position: absolute;
+  top: 0;
+  left: 80px;
+  margin: 10px;
+  transition: left 0.5s ease-in-out;
+}
+
+.student-nav.show ~ .profile-container {
+  left: 280px;
+}
+
+
+
+@media screen and (max-width: 750px) {
+  .profile-container {
+    left: 0;
+    overflow: hidden;
+    margin: 20px;
+  }
+  .student-nav.show ~ .profile-container {
+    left: 260px;
+  }
+}

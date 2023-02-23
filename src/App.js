@@ -4,6 +4,7 @@ import Apply from "./Pages/Apply";
 import StudentLogin from "./Pages/StudentLogin";
 import FacilitatorLogin from "./Pages/FacilitatorLogin";
 import AdminLogin from "./Pages/AdminLogin";
+import StudentDashboard from "./Pages/Student/Dashboard";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route exact path="/studentlogin" element={<StudentLogin />} />
           <Route exact path="/facilitatorlogin" element={<FacilitatorLogin />} />
           <Route exact path="/adminlogin" element={<AdminLogin />} />
+          <Route exact path="/student" element={<StudentDashboard />} />
         </Routes>
       </BrowserRouter>
     </>
