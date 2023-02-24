@@ -57,29 +57,17 @@
   font-size: 1.5rem;
 }
 
-@media screen and (max-width: 750px) {
-  .profile-container {
-    left: 0;
-    margin: 10px 0;
-  }
-  .student-nav.show ~ .profile-container {
-    left: 260px;
-  }
-  .box-row {
-    flex-direction: column;
-  }
-  .dashboard-box {
-    min-width: unset;
-  }
-  .personal-info-title {
-    font-size: 1rem;
-  }
+.sub-header-gold{
+  margin: 10px 20px;
+  color: var(--gold);
+}
 
-  .personal-info {
-    margin: 10px auto;
-    font-size: 1.2rem;
-    overflow: scroll;
-  }
+.timetable-list{
+  margin: 10px;
+}
+
+.timetable-data{
+  font-size: 1.1rem;
 }
 
 .courses-table {
@@ -114,6 +102,32 @@
   border-radius: 5px;
   color: var(--background-color);
   background-color: var(--blue);
+}
+
+
+@media screen and (max-width: 750px) {
+  .profile-container {
+    left: 0;
+    margin: 10px 0;
+  }
+  .student-nav.show ~ .profile-container {
+    left: 260px;
+  }
+  .box-row {
+    flex-direction: column;
+  }
+  .dashboard-box {
+    min-width: unset;
+  }
+  .personal-info-title {
+    font-size: 1rem;
+  }
+
+  .personal-info {
+    margin: 10px auto;
+    font-size: 1.2rem;
+    overflow: scroll;
+  }
 }
 
 @media screen and (max-width: 600px) {
