@@ -81,20 +81,28 @@
 }
 
 .student-nav.show .student-nav-item.show {
-  margin-bottom: 100px;
+  margin-bottom: 130px;
 }
 
 .sub-menu-container {
   display: none;
 }
 
+.student-nav-list.false .sub-menu-container{
+  display: none !important;
+}
+
 .student-nav-item.show .sub-menu-container {
   position: absolute;
-  margin: 10px;
+  margin: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   top: 100%;
+}
+
+.sub-menu-link{
+  margin: 5px 0;
 }
 
 @media screen and (max-width: 750px) {

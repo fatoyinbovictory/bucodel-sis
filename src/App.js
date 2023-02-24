@@ -6,6 +6,7 @@ import FacilitatorLogin from "./Pages/FacilitatorLogin";
 import AdminLogin from "./Pages/AdminLogin";
 import StudentDashboard from "./Pages/Student/Dashboard";
 import StudentPersonal from "./Pages/Student/Personal";
+import StudentCourses from "./Pages/Student/Courses";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/adminlogin" element={<AdminLogin />} />
           <Route exact path="/student" element={<StudentDashboard />} />
           <Route exact path="/student/personal" element={<StudentPersonal />} />
+          <Route exact path="/student/courses" element={<StudentCourses />} />
         </Routes>
       </BrowserRouter>
     </>

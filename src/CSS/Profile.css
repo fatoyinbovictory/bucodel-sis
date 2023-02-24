@@ -6,6 +6,10 @@
   transition: left 0.5s ease-in-out;
 }
 
+.profile-container > .landing-main-header-blue {
+  margin: 20px;
+}
+
 .student-nav.show ~ .profile-container {
   left: 280px;
 }
@@ -23,40 +27,40 @@
   margin: 20px 30px;
 }
 
-.dashboard-box h1{
-    color: white;
-    font-size: 2.3rem;
-    margin: 0;
+.dashboard-box h1 {
+  color: white;
+  font-size: 2.3rem;
+  margin: 0;
 }
 
-.dashboard-box h3{
-    color: white;
-    font-size: 1.5rem;
+.dashboard-box h3 {
+  color: white;
+  font-size: 1.5rem;
 }
 
-.personal-info-list{
+.personal-info-list {
   list-style: none;
 }
 
-.personal-info-row{
+.personal-info-row {
   margin: 30px 0;
 }
 
-.personal-info-title{
+.personal-info-title {
   margin: 0;
   color: rgb(97, 97, 97);
   font-size: 1.2rem;
 }
 
-.personal-info{
-  margin: 10px 0;
+.personal-info {
+  margin: 10px auto;
   font-size: 1.5rem;
 }
 
 @media screen and (max-width: 750px) {
   .profile-container {
     left: 0;
-    margin: 20px;
+    margin: 10px 0;
   }
   .student-nav.show ~ .profile-container {
     left: 260px;
@@ -65,6 +69,90 @@
     flex-direction: column;
   }
   .dashboard-box {
-  min-width: unset;
+    min-width: unset;
+  }
+  .personal-info-title {
+    font-size: 1rem;
+  }
+
+  .personal-info {
+    margin: 10px auto;
+    font-size: 1.2rem;
+    overflow: scroll;
+  }
+}
+
+.courses-table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+.courses-table-row {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: 0.35em;
+}
+
+.courses-table-data {
+  padding: 0.625em;
+  text-align: center;
+}
+
+.courses-table th {
+  font-size: 0.85em;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.courses-table-button{
+  padding: 7px 10px;
+  border: none;
+  border-radius: 5px;
+  color: var(--background-color);
+  background-color: var(--blue);
+}
+
+@media screen and (max-width: 600px) {
+  .courses-table {
+    border: 0;
+  }
+
+  .courses-table thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+
+  .courses-table-row {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: 0.625em;
+  }
+
+  .courses-table-data {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: 0.8em;
+    text-align: right;
+  }
+
+  .courses-table-data::before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .courses-table-data:last-child {
+    border-bottom: 0;
   }
 }

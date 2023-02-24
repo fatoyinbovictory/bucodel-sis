@@ -54,14 +54,14 @@ const StudentNav = () => {
             <p className="sub-menu-header">Academic Info</p>
             <img src={caretIcon} alt="arrow" className="caret-down" />
             <div className="sub-menu-container">
-              <Link to="/student/semester" className="sub-menu-link">
-                Link
+              <Link to="/student/courses" className="sub-menu-link">
+                Current Courses
               </Link>
-              <Link to="/student/semester" className="sub-menu-link">
-                Link
+              <Link to="/student/timetable" className="sub-menu-link">
+                Timetable
               </Link>
-              <Link to="/student/semester" className="sub-menu-link">
-                Link
+              <Link to="/student/results" className="sub-menu-link">
+                Semester Results
               </Link>
             </div>
           </li>
@@ -73,11 +73,11 @@ const StudentNav = () => {
             <p className="sub-menu-header">Registration</p>
             <img src={caretIcon} alt="arrow" className="caret-down" />
             <div className="sub-menu-container">
-              <Link to="/student/semester" className="sub-menu-link">
-                Link
+              <Link to="/student/register/semester" className="sub-menu-link">
+                Select Semester
               </Link>
-              <Link to="/student/semester" className="sub-menu-link">
-                Link
+              <Link to="/student/register/courses" className="sub-menu-link">
+                Select Courses
               </Link>
               <Link to="/student/semester" className="sub-menu-link">
                 Link

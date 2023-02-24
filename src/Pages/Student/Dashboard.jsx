@@ -7,7 +7,7 @@ const Dashboard = () => {
   return (
     <>
       <StudentNav />
-      <section  >
+      <section className="profile-container">
         <h1 className="landing-main-header-blue">Welcome, Victory</h1>
         <div className="box-row">
           <section className="dashboard-box">

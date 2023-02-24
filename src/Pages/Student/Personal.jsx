@@ -25,7 +25,7 @@ const Personal = () => {
           </li>
           <li className="personal-info-row">
             <p className="personal-info-title">Level</p>
-            <p className="personal-info">100</p>
+            <p className="personal-info">400</p>
           </li>
           <li className="personal-info-row">
             <p className="personal-info-title">C.GPA</p>
