@@ -34,13 +34,17 @@ const StudentNav = () => {
           onClick={toggleMenuShow}
         />
         <ul className={`student-nav-list ${showMenu && "show"}`}>
-          <li className="student-nav-item">
-            <img src={dashboardIcon} alt="dashboard" />
-            <Link to="/student">Dashboard</Link>
+          <li className="student-nav-item active">
+            <Link to="/student" className="profile-nav-link">
+              <img src={dashboardIcon} alt="dashboard" />
+              <p className="profile-nav-link-name">Dashboard</p>
+            </Link>
           </li>
           <li className="student-nav-item">
-            <img src={personalIcon} alt="personal" />
-            <Link to="/student/personal">Personal Info</Link>
+            <Link to="/student/personal" className="profile-nav-link">
+              <img src={personalIcon} alt="personal" />
+              <p className="profile-nav-link-name"> Personal Info</p>
+            </Link>
           </li>
           <li
             className={`student-nav-item ${showSubMenu && "show"}`}
@@ -81,8 +85,10 @@ const StudentNav = () => {
             </div>
           </li>
           <li className="student-nav-item">
-            <img src={financeIcon} alt="finance" />
-            <Link to="/student/fees">Fees & Payments</Link>
+            <Link to="/student/finance" className="profile-nav-link">
+              <img src={financeIcon} alt="personal" />
+              <p className="profile-nav-link-name">Fees & Payments</p>
+            </Link>
           </li>
         </ul>
       </nav>

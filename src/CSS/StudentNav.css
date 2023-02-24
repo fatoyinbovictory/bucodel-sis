@@ -1,5 +1,5 @@
 .student-nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   height: 100%;
@@ -28,12 +28,14 @@
   flex-direction: column;
 }
 
-.student-nav-list a,
+.profile-nav-link-name,
 .sub-menu-header {
   display: none;
+  color: white;
+  margin: 0;
 }
 
-.student-nav-list.show a,
+.student-nav-list.show .profile-nav-link-name,
 .student-nav-list.show .sub-menu-header {
   display: block;
 }
@@ -49,6 +51,20 @@
   margin: 20px -10px;
   cursor: pointer;
 }
+
+.student-nav-item .profile-nav-link {
+  position: relative;
+  display: flex;
+}
+/* 
+.student-nav-item.active {
+  padding: 10px;
+  border-radius: 20px 0 0 20px;
+  background-color: var(--background-color);
+}
+.student-nav-item.active a {
+  color: var(--blue);
+} */
 
 .sub-menu-header {
   color: white;

@@ -10,15 +10,61 @@
   left: 280px;
 }
 
+.box-row {
+  display: flex;
+}
 
+.dashboard-box {
+  background-color: var(--blue);
+  padding: 15px;
+  min-width: 250px;
+  min-height: 180px;
+  border-radius: 30px;
+  margin: 20px 30px;
+}
+
+.dashboard-box h1{
+    color: white;
+    font-size: 2.3rem;
+    margin: 0;
+}
+
+.dashboard-box h3{
+    color: white;
+    font-size: 1.5rem;
+}
+
+.personal-info-list{
+  list-style: none;
+}
+
+.personal-info-row{
+  margin: 30px 0;
+}
+
+.personal-info-title{
+  margin: 0;
+  color: rgb(97, 97, 97);
+  font-size: 1.2rem;
+}
+
+.personal-info{
+  margin: 10px 0;
+  font-size: 1.5rem;
+}
 
 @media screen and (max-width: 750px) {
   .profile-container {
     left: 0;
-    overflow: hidden;
     margin: 20px;
   }
   .student-nav.show ~ .profile-container {
     left: 260px;
+  }
+  .box-row {
+    flex-direction: column;
+  }
+  .dashboard-box {
+  min-width: unset;
   }
 }
