@@ -116,7 +116,7 @@
     display: none;
   }
   .student-nav-list {
-    margin-top: 25px;
+    margin-top: 45px;
   }
   .student-nav-list.show .student-nav-item {
     display: flex;

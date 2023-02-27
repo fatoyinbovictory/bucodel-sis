@@ -8,6 +8,8 @@ import StudentDashboard from "./Pages/Student/Dashboard";
 import StudentPersonal from "./Pages/Student/Personal";
 import StudentCourses from "./Pages/Student/Courses";
 import StudentTimetable from "./Pages/Student/Timetable";
+import StudentResults from "./Pages/Student/Results";
+import StudentSpecificResult from "./Pages/Student/SpecificResult";
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             path="/student/timetable"
             element={<StudentTimetable />}
           />
+          <Route exact path="/student/results" element={<StudentResults />} />
+          <Route exact path="/student/results/2023-2024-1" element={<StudentSpecificResult/>} />
         </Routes>
       </BrowserRouter>
     </>

@@ -14,7 +14,7 @@ const Footer = () => {
         <section className="footer-column">
           <img src={codelLogo} alt="logo" className="footer-logo" />
           <p className="footer-text">
-            Copyright © 2020. Babcock University. All rights reserved.
+            Copyright © 2023. Babcock University. All rights reserved.
           </p>
         </section>
         <div className="footer-line"></div>

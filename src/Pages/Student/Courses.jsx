@@ -14,7 +14,7 @@ const Courses = () => {
               <th className="courses-table-data">Course Code</th>
               <th className="courses-table-data">Facilitator</th>
               <th className="courses-table-data">Credit Units</th>
-              <th className="courses-table-data">More</th>
+              <th className="courses-table-data"></th>
             </tr>
           </thead>
           <tbody>
