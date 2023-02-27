@@ -18,6 +18,11 @@
   display: flex;
 }
 
+.profile-subheader {
+  margin: 10px 20px;
+  color: black;
+}
+
 .dashboard-box {
   background-color: var(--blue);
   padding: 15px;
@@ -102,6 +107,16 @@
   border-radius: 5px;
   color: var(--background-color);
   background-color: var(--blue);
+}
+
+.btn-medium{
+  color: var(--background-color);
+  background-color: var(--blue);
+  min-height: 47px;
+  min-width: 200px;
+  border: none;
+  border-radius:5px;
+  margin: 20px;
 }
 
 

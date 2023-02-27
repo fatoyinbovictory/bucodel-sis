@@ -83,6 +83,13 @@
 .student-nav.show .student-nav-item.show {
   margin-bottom: 130px;
 }
+.student-nav.show .student-nav-item.show {
+  margin-bottom: 130px;
+}
+
+.student-nav-item.show.fin ~ .student-nav-item{
+  margin-top: 40px;
+}
 
 .sub-menu-container {
   display: none;

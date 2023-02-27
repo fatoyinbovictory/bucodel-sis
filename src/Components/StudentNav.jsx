@@ -66,7 +66,7 @@ const StudentNav = () => {
             </div>
           </li>
           <li
-            className={`student-nav-item ${showSubMenu2 && "show"}`}
+            className={`student-nav-item ${showSubMenu2 && "show"} fin`}
             onClick={toggleSubMenuShow2}
           >
             <img src={registerIcon} alt="reg" />
@@ -79,8 +79,11 @@ const StudentNav = () => {
               <Link to="/student/register/courses" className="sub-menu-link">
                 Select Courses
               </Link>
-              <Link to="/student/semester" className="sub-menu-link">
-                Link
+              <Link to="/student/register/selectedcourses" className="sub-menu-link">
+                Selected Courses
+              </Link>
+              <Link to="/student/register/submit" className="sub-menu-link">
+                Review & Submit
               </Link>
             </div>
           </li>
