@@ -16,6 +16,7 @@ import StudentCourselist from "./Pages/Student/Courselist";
 import StudentSelectedCourses from "./Pages/Student/SelectedCourses";
 import StudentSubmit from "./Pages/Student/Submit";
 import StudentFees from "./Pages/Student/Fees";
+import FacilitatorDashboard from "./Pages/Facilitator/Dashboard";
 
 function App() {
   return (
@@ -71,6 +72,11 @@ function App() {
             element={<StudentSubmit />}
           />
           <Route exact path="/student/fees" element={<StudentFees />} />
+          <Route
+            exact
+            path="/facilitator"
+            element={<FacilitatorDashboard />}
+          />
         </Routes>
       </BrowserRouter>
     </>
