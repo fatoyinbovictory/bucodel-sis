@@ -20,6 +20,10 @@ const Personal = () => {
             <p className="personal-info">vicfatoyinbo@gmail.com</p>
           </li>
           <li className="personal-info-row">
+            <p className="personal-info-title">Phone Number</p>
+            <p className="personal-info">08129324940</p>
+          </li>
+          <li className="personal-info-row">
             <p className="personal-info-title">Course</p>
             <p className="personal-info">Software Engineering</p>
           </li>
