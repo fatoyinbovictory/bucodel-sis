@@ -62,16 +62,16 @@
   font-size: 1.5rem;
 }
 
-.sub-header-gold{
+.sub-header-gold {
   margin: 10px 20px;
   color: var(--gold);
 }
 
-.timetable-list{
+.timetable-list {
   margin: 10px;
 }
 
-.timetable-data{
+.timetable-data {
   font-size: 1.1rem;
 }
 
@@ -101,24 +101,33 @@
   text-transform: uppercase;
 }
 
-.courses-table-button{
+.courses-table-button {
   padding: 7px 10px;
   border: none;
   border-radius: 5px;
   color: var(--background-color);
   background-color: var(--blue);
+  cursor: pointer;
 }
 
-.btn-medium{
+.btn-medium {
   color: var(--background-color);
   background-color: var(--blue);
   min-height: 47px;
   min-width: 200px;
   border: none;
-  border-radius:5px;
+  border-radius: 5px;
   margin: 20px;
 }
-
+input[type="file"]::file-selector-button {
+  color: var(--background-color);
+  background-color: var(--blue);
+  min-height: 47px;
+  min-width: 120px;
+  border: none;
+  border-radius: 5px;
+  margin: 20px 0;
+}
 
 @media screen and (max-width: 750px) {
   .profile-container {

@@ -15,6 +15,7 @@ import StudentSelectCourses from "./Pages/Student/SelectCourses";
 import StudentCourselist from "./Pages/Student/Courselist";
 import StudentSelectedCourses from "./Pages/Student/SelectedCourses";
 import StudentSubmit from "./Pages/Student/Submit";
+import StudentFees from "./Pages/Student/Fees";
 
 function App() {
   return (
@@ -64,11 +65,12 @@ function App() {
             path="/student/register/selectedcourses"
             element={<StudentSelectedCourses />}
           />
-            <Route
+          <Route
             exact
             path="/student/register/submit"
-            element={<StudentSubmit/>}
+            element={<StudentSubmit />}
           />
+          <Route exact path="/student/fees" element={<StudentFees />} />
         </Routes>
       </BrowserRouter>
     </>

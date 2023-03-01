@@ -88,7 +88,7 @@ const StudentNav = () => {
             </div>
           </li>
           <li className="student-nav-item">
-            <Link to="/student/finance" className="profile-nav-link">
+            <Link to="/student/fees" className="profile-nav-link">
               <img src={financeIcon} alt="personal" />
               <p className="profile-nav-link-name">Fees & Payments</p>
             </Link>

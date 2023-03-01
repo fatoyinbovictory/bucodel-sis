@@ -7,12 +7,19 @@ const Submit = () => {
       <StudentNav />
       <section className="profile-container">
         <h1 className="landing-main-header-blue">Review & Submit</h1>
-        <ul className="timetable-list">
-          <li className="timetable-data">
-            Selected Semester: 2023/2024 1st Semester
+        <ul className="personal-info-list">
+          <li className="personal-info-row">
+            <p className="personal-info-title">Selected Semester</p>
+            <p className="personal-info">2023/2024 1st Semester</p>
           </li>
-          <li className="timetable-data">Number of Courses Selected: 8</li>
-          <li className="timetable-data">Total Credit Units: 22</li>
+          <li className="personal-info-row">
+            <p className="personal-info-title">Number of Courses Selected</p>
+            <p className="personal-info">8</p>
+          </li>
+          <li className="personal-info-row">
+            <p className="personal-info-title">Total Credit Units</p>
+            <p className="personal-info">22</p>
+          </li>
         </ul>
         <button className="btn-medium">Submit</button>
       </section>
