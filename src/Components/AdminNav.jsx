@@ -45,49 +45,49 @@ const AdminNav = () => {
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/semester" className="profile-nav-link">
               <img src={createIcon} alt="personal" />
               <p className="profile-nav-link-name">Create Semester</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/programs" className="profile-nav-link">
               <img src={programsIcon} alt="personal" />
               <p className="profile-nav-link-name">Programs</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/facilitators" className="profile-nav-link">
               <img src={facilitatorIcon} alt="personal" />
               <p className="profile-nav-link-name">Facilitators</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/students" className="profile-nav-link">
               <img src={studentIcon} alt="personal" />
               <p className="profile-nav-link-name">Students</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/applications" className="profile-nav-link">
               <img src={appIcon} alt="personal" />
               <p className="profile-nav-link-name">Student Applications</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/studentregistration" className="profile-nav-link">
               <img src={regIcon} alt="personal" />
               <p className="profile-nav-link-name">Student Registration</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/fees" className="profile-nav-link">
               <img src={financeIcon} alt="personal" />
               <p className="profile-nav-link-name">Fees Payments</p>
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/details" className="profile-nav-link">
+            <Link to="/admin/collate" className="profile-nav-link">
               <img src={collateIcon} alt="personal" />
               <p className="profile-nav-link-name">Collate & Post Results</p>
             </Link>

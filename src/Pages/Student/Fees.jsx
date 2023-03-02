@@ -25,6 +25,8 @@ const Fees = () => {
             <input type="file" name="upload-fees" id="" />
           </li>
         </ul>
+        <button className="btn-medium">Submit</button>
+
       </section>
     </>
   );

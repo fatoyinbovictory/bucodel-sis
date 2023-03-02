@@ -83,7 +83,7 @@ main {
   margin-bottom: 30px;
 }
 
-.login-btn{
+.login-btn {
   color: var(--background-color);
   background-color: var(--blue);
   height: 47px;
@@ -106,7 +106,7 @@ main {
 }
 
 .form-wrap.profile {
-  margin:  10px 0;
+  margin: 10px 0;
 }
 
 .application-input {
@@ -123,6 +123,8 @@ main {
 
 input:focus ~ label,
 input:valid ~ label,
+select:focus ~ label,
+select:valid ~ label,
 input[type="date"]:focus ~ label,
 input[type="email"]:focus ~ label,
 input[type="date"]:valid ~ label,
@@ -167,7 +169,8 @@ input[type="email"] ~ label {
 
 input[type="text"]:focus,
 input[type="email"]:focus,
-input[type="date"]:focus {
+input[type="date"]:focus,
+select {
   outline: none;
 }
 
