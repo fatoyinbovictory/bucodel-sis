@@ -21,6 +21,7 @@ import FacilitatorDetails from "./Pages/Facilitator/Details";
 import FacilitatorCourses from "./Pages/Facilitator/Courses";
 import FacilitatorCourseDetails from "./Pages/Facilitator/CourseDetails";
 import FacilitatorCourseStudents from "./Pages/Facilitator/CourseStudents";
+import AdminDashboard from "./Pages/Admin/Dashboard";
 
 function App() {
   return (
@@ -77,10 +78,27 @@ function App() {
           />
           <Route exact path="/student/fees" element={<StudentFees />} />
           <Route exact path="/facilitator" element={<FacilitatorDashboard />} />
-          <Route exact path="/facilitator/details" element={<FacilitatorDetails/>} />
-          <Route exact path="/facilitator/courses" element={<FacilitatorCourses/>} />
-          <Route exact path="/facilitator/course/details" element={<FacilitatorCourseDetails/>} />
-          <Route exact path="/facilitator/course/details/students" element={<FacilitatorCourseStudents/>} />
+          <Route
+            exact
+            path="/facilitator/details"
+            element={<FacilitatorDetails />}
+          />
+          <Route
+            exact
+            path="/facilitator/courses"
+            element={<FacilitatorCourses />}
+          />
+          <Route
+            exact
+            path="/facilitator/course/details"
+            element={<FacilitatorCourseDetails />}
+          />
+          <Route
+            exact
+            path="/facilitator/course/details/students"
+            element={<FacilitatorCourseStudents />}
+          />
+          <Route exact path="/admin" element={<AdminDashboard />} />
         </Routes>
       </BrowserRouter>
     </>
