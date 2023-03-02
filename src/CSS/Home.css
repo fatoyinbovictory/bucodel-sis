@@ -121,6 +121,11 @@ main {
   box-shadow: none;
 }
 
+select{
+  height: 52px !important;
+  width: 325px !important;
+}
+
 input:focus ~ label,
 input:valid ~ label,
 select:focus ~ label,

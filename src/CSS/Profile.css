@@ -110,6 +110,10 @@
   cursor: pointer;
 }
 
+.courses-table-button.top{
+  margin-bottom: 20px;
+}
+
 .btn-medium {
   color: var(--background-color);
   background-color: var(--blue);
