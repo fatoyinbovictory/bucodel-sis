@@ -29,6 +29,7 @@ import AdminCreateProgram from "./Pages/Admin/CreateProgram";
 import AdminSpecificProgram from "./Pages/Admin/SpecificProgram";
 import AdminCreateCourse from "./Pages/Admin/CreateCourse";
 import AdminFacilitators from "./Pages/Admin/Facilitators";
+import AdminCreateFacilitator from "./Pages/Admin/CreateFacilitator";
 
 function App() {
   return (
@@ -113,6 +114,7 @@ function App() {
           <Route exact path="/admin/programs/specific" element={<AdminSpecificProgram />} />
           <Route exact path="/admin/programs/specific/create" element={<AdminCreateCourse />} />
           <Route exact path="/admin/facilitators" element={<AdminFacilitators />} />
+          <Route exact path="/admin/facilitators/create" element={<AdminCreateFacilitator/>} />
         </Routes>
       </BrowserRouter>
     </>

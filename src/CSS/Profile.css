@@ -110,6 +110,10 @@
   cursor: pointer;
 }
 
+.courses-table-button.red{
+  background-color: var(--red);
+}
+
 .courses-table-button.top {
   margin-bottom: 20px;
 }

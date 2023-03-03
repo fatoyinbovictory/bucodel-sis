@@ -32,7 +32,7 @@ const Facilitators = () => {
                 09109292737
               </td>
               <td className="courses-table-data" data-label="">
-                <button className="courses-table-button">More</button>
+                <button className="courses-table-button red">Delete</button>
               </td>
             </tr>
           </tbody>
