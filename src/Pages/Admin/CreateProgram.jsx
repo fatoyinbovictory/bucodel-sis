@@ -74,10 +74,11 @@ const CreateProgram = () => {
               <option value="1">Enoch Ayodele</option>
               <option value="2">Olaleye Timilehin</option>
             </select>
-              <label htmlFor="lastName">Coordinator</label>
+              <label htmlFor="lastName">Program Head</label>
             </div>
           </div>
         </div>
+        <button className="btn-medium">Create Program</button>
       </section>
     </>
   );

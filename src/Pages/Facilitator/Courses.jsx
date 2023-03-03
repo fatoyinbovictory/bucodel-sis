@@ -31,7 +31,7 @@ const Courses = () => {
               <td className="courses-table-data" data-label="">
                 <Link to="/facilitator/course/details">
                   <button className="courses-table-button">More</button>
-                </Link>{" "}
+                </Link>
               </td>
             </tr>
             <tr className="courses-table-row">
@@ -48,7 +48,7 @@ const Courses = () => {
               <td className="courses-table-data" data-label="">
                 <Link to="/facilitator/course/details">
                   <button className="courses-table-button">More</button>
-                </Link>{" "}
+                </Link>
               </td>
             </tr>
             <tr className="courses-table-row">

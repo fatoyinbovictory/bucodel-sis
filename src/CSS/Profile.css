@@ -110,7 +110,7 @@
   cursor: pointer;
 }
 
-.courses-table-button.top{
+.courses-table-button.top {
   margin-bottom: 20px;
 }
 
@@ -124,6 +124,10 @@
   margin: 20px;
 }
 
+label {
+  font-family: "Poppins", sans-serif !important;
+}
+
 input[type="file"]::file-selector-button {
   color: var(--background-color);
   background-color: var(--blue);
@@ -134,14 +138,14 @@ input[type="file"]::file-selector-button {
   margin: 20px 0;
 }
 
-.facilitator-link{
+.facilitator-link {
   text-decoration: none;
   color: var(--blue);
   font-size: 1.5rem;
   margin-bottom: 30px;
 }
 
-.table-input{
+.table-input {
   border-radius: 5px;
   border: 1px solid var(--blue);
   width: 100px;

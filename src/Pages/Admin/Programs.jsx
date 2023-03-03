@@ -36,7 +36,9 @@ const Programs = () => {
                 B.Sc Software Engineering
               </td>
               <td className="courses-table-data" data-label="">
-                <button className="courses-table-button">More</button>
+                <Link to="specific">
+                  <button className="courses-table-button">More</button>
+                </Link>
               </td>
             </tr>
           </tbody>

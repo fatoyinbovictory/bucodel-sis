@@ -24,6 +24,7 @@ const CreateSemester = () => {
               <option value=""></option>
               <option value="1">1st</option>
               <option value="2">2nd</option>
+              <option value="3">3rd(Summer)</option>
             </select>
             <label htmlFor="lastName">Semester</label>
           </div>

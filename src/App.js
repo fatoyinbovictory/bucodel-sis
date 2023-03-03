@@ -26,6 +26,9 @@ import AdminDetails from "./Pages/Admin/Details";
 import AdminSemester from "./Pages/Admin/CreateSemester";
 import AdminPrograms from "./Pages/Admin/Programs";
 import AdminCreateProgram from "./Pages/Admin/CreateProgram";
+import AdminSpecificProgram from "./Pages/Admin/SpecificProgram";
+import AdminCreateCourse from "./Pages/Admin/CreateCourse";
+import AdminFacilitators from "./Pages/Admin/Facilitators";
 
 function App() {
   return (
@@ -107,6 +110,9 @@ function App() {
           <Route exact path="/admin/semester" element={<AdminSemester />} />
           <Route exact path="/admin/programs" element={<AdminPrograms />} />
           <Route exact path="/admin/programs/create" element={<AdminCreateProgram />} />
+          <Route exact path="/admin/programs/specific" element={<AdminSpecificProgram />} />
+          <Route exact path="/admin/programs/specific/create" element={<AdminCreateCourse />} />
+          <Route exact path="/admin/facilitators" element={<AdminFacilitators />} />
         </Routes>
       </BrowserRouter>
     </>
