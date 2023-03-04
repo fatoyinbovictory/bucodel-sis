@@ -35,6 +35,8 @@ import AdminApplications from "./Pages/Admin/Applications";
 import AdminStudentApp from "./Pages/Admin/StudentApp";
 import AdminRegistration from "./Pages/Admin/Registrations";
 import AdminStudentReg from "./Pages/Admin/StudentReg";
+import AdminFees from "./Pages/Admin/Fees";
+import AdminStudentFees from "./Pages/Admin/StudentFees";
 
 function App() {
   return (
@@ -125,6 +127,8 @@ function App() {
           <Route exact path="/admin/applications/specific" element={<AdminStudentApp/>} />
           <Route exact path="/admin/studentregistration" element={<AdminRegistration />} />
           <Route exact path="/admin/studentregistration/specific" element={<AdminStudentReg/>} />
+          <Route exact path="/admin/fees" element={<AdminFees/>} />
+          <Route exact path="/admin/fees/specific" element={<AdminStudentFees/>} />
         </Routes>
       </BrowserRouter>
     </>
