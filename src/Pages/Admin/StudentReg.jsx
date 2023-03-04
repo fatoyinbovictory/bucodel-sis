@@ -1,11 +1,12 @@
 import React from "react";
-import StudentNav from "../../Components/StudentNav";
+import AdminNav from "../../Components/AdminNav";
 
-const Personal = () => {
+const StudentReg = () => {
   return (
     <>
-      <StudentNav />
+      <AdminNav />
       <section className="profile-container">
+        <h1 className="landing-main-header-blue">Semester Registration</h1>
         <ul className="personal-info-list">
           <li className="personal-info-row">
             <p className="personal-info-title">Name</p>
@@ -28,35 +29,22 @@ const Personal = () => {
             <p className="personal-info">Software Engineering</p>
           </li>
           <li className="personal-info-row">
-            <p className="personal-info-title">Level</p>
-            <p className="personal-info">400</p>
+            <p className="personal-info-title">Semester</p>
+            <p className="personal-info">2023/2024 1st Semester</p>
           </li>
           <li className="personal-info-row">
-            <p className="personal-info-title">C.GPA</p>
-            <p className="personal-info">4.2</p>
+            <p className="personal-info-title">Courses Selected</p>
+            <p className="personal-info">Internet Technologies</p>
+            <p className="personal-info">Internet Technologies</p>
+            <p className="personal-info">Internet Technologies</p>
+            <p className="personal-info">Internet Technologies</p>
           </li>
-          <li className="personal-info-row">
-            <p className="personal-info-title">Sex</p>
-            <p className="personal-info">Male</p>
-          </li>
-          <li className="personal-info-row">
-            <p className="personal-info-title">Nationality</p>
-            <p className="personal-info">Nigeria</p>
-          </li>
-          <li className="personal-info-row">
-            <p className="personal-info-title">Country of Residence</p>
-            <p className="personal-info">Nigeria</p>
-          </li>
-          <li className="personal-info-row">
-            <p className="personal-info-title">Address</p>
-            <p className="personal-info">
-              No.32 Test Address, Lekki, Lagos State
-            </p>
-          </li>
-        </ul>
+          </ul>
+          <button className="btn-medium">Approve</button>
+          <button className="btn-medium red">Deny</button>
       </section>
     </>
   );
 };
 
-export default Personal;
+export default StudentReg;

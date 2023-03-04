@@ -32,6 +32,9 @@ import AdminFacilitators from "./Pages/Admin/Facilitators";
 import AdminCreateFacilitator from "./Pages/Admin/CreateFacilitator";
 import AdminStudents from "./Pages/Admin/Students";
 import AdminApplications from "./Pages/Admin/Applications";
+import AdminStudentApp from "./Pages/Admin/StudentApp";
+import AdminRegistration from "./Pages/Admin/Registrations";
+import AdminStudentReg from "./Pages/Admin/StudentReg";
 
 function App() {
   return (
@@ -119,6 +122,9 @@ function App() {
           <Route exact path="/admin/facilitators/create" element={<AdminCreateFacilitator/>} />
           <Route exact path="/admin/students" element={<AdminStudents/>} />
           <Route exact path="/admin/applications" element={<AdminApplications/>} />
+          <Route exact path="/admin/applications/specific" element={<AdminStudentApp/>} />
+          <Route exact path="/admin/studentregistration" element={<AdminRegistration />} />
+          <Route exact path="/admin/studentregistration/specific" element={<AdminStudentReg/>} />
         </Routes>
       </BrowserRouter>
     </>

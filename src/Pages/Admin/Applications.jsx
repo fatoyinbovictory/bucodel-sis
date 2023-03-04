@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import AdminNav from "../../Components/AdminNav";
 
 const Applications = () => {
@@ -22,7 +23,9 @@ const Applications = () => {
               <p className="personal-info card">Software Engineering</p>
             </div>
             <div className="card-row">
-              <button className="courses-table-button">View</button>
+              <Link to="specific">
+                <button className="courses-table-button">View</button>
+              </Link>
             </div>
           </div>
           <div className="application-card">
@@ -39,7 +42,9 @@ const Applications = () => {
               <p className="personal-info card">Software Engineering</p>
             </div>
             <div className="card-row">
-              <button className="courses-table-button">View</button>
+              <Link to="specific">
+                <button className="courses-table-button">View</button>
+              </Link>
             </div>
           </div>
           <div className="application-card">
@@ -56,7 +61,9 @@ const Applications = () => {
               <p className="personal-info card">Software Engineering</p>
             </div>
             <div className="card-row">
-              <button className="courses-table-button">View</button>
+              <Link to="specific">
+                <button className="courses-table-button">View</button>
+              </Link>
             </div>
           </div>
           <div className="application-card">
@@ -73,7 +80,9 @@ const Applications = () => {
               <p className="personal-info card">Software Engineering</p>
             </div>
             <div className="card-row">
-              <button className="courses-table-button">View</button>
+              <Link to="specific">
+                <button className="courses-table-button">View</button>
+              </Link>
             </div>
           </div>
           <div className="application-card">
@@ -90,7 +99,9 @@ const Applications = () => {
               <p className="personal-info card">Software Engineering</p>
             </div>
             <div className="card-row">
-              <button className="courses-table-button">View</button>
+              <Link to="specific">
+                <button className="courses-table-button">View</button>
+              </Link>
             </div>
           </div>
         </div>

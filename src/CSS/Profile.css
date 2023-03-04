@@ -132,8 +132,13 @@
   min-height: 47px;
   min-width: 200px;
   border: none;
-  border-radius: 5px;
+  border-radius: 10px;
   margin: 20px;
+  cursor: pointer;
+}
+
+.btn-medium.red{
+  background-color: var(--red);
 }
 
 label {
