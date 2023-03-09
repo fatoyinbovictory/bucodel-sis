@@ -32,6 +32,12 @@ const StepOne = ({ formData, setFormData }) => {
               className="application-input"
               name="lastName"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  lastName: e.target.value
+                });
+              }}
             />
             <label htmlFor="lastName">Last Name</label>
           </div>
@@ -44,7 +50,12 @@ const StepOne = ({ formData, setFormData }) => {
               type="text"
               className="application-input"
               name="middleName"
-              required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  middleName: e.target.value
+                });
+              }}
             />
             <label htmlFor="lastName">Middle Name</label>
           </div>
@@ -56,6 +67,12 @@ const StepOne = ({ formData, setFormData }) => {
               className="application-input"
               name="dateofbirth"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  dateOfBirth: e.target.value
+                });
+              }}
             />
             <label htmlFor="dateofbirth">Date of Birth</label>
           </div>
@@ -69,19 +86,51 @@ const StepOne = ({ formData, setFormData }) => {
               className="application-input"
               name="email"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  email: e.target.value
+                });
+              }}
             />
             <label htmlFor="email">Email</label>
           </div>
         </div>
-        <div className="form-wrap">
+        {/* <div className="form-wrap">
           <div className="input-wrap">
             <input
               type="text"
               className="application-input"
               name="sex"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  sex: e.target.value
+                });
+              }}
             />
             <label htmlFor="sex">Sex</label>
+          </div>
+        </div> */}
+        <div className="form-wrap">
+          <div className="input-wrap">
+            <select
+              className="application-input"
+              name="program"
+              required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  sex: e.target.value
+                });
+              }}
+            >
+              <option value=""></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+            <label htmlFor="lastName">Sex</label>
           </div>
         </div>
       </div>
@@ -123,12 +172,13 @@ const StepOne = ({ formData, setFormData }) => {
         </div>
         <div className="form-wrap">
           <div className="input-wrap">
-            <select className="application-input" name="program" required>
-              <option value=""></option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-            <label htmlFor="lastName">Sex</label>
+            <input
+              type="text"
+              className="application-input"
+              name="placeOfBirth"
+              required
+            />
+            <label htmlFor="placeOfBirth">Place of Birth</label>
           </div>
         </div>
       </div>

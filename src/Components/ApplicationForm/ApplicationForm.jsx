@@ -17,8 +17,12 @@ const ApplicationForm = () => {
     stateOfOrigin: "",
     address: "",
     phone: "",
-    pdf: "",
-    house: ""
+    placeOfBirth: "",
+    program: "",
+    previousUni: "",
+    ssce: null,
+    utme: null,
+    password: ""
   });
 
   const handleStepChange = () => {
@@ -50,19 +54,19 @@ const ApplicationForm = () => {
     <>
       <h3 className="apply-step-count">{`${stepPage + 1}/3`}</h3>
       {handleStepChange()}
-    <div className="buttons">
-    <button onClick={handleSubmit} className="apply-button">
-        {stepPage === 0 || stepPage === 1 ? "Next" : "Submit"}
-      </button>
-      {stepPage > 0 && (
-        <button
-          onClick={() => setStepPage(stepPage - 1)}
-          className="apply-button"
-        >
-          Back
+      <div className="buttons">
+        <button onClick={handleSubmit} className="apply-button">
+          {stepPage === 0 || stepPage === 1 ? "Next" : "Submit"}
         </button>
-      )}
-    </div>
+        {stepPage > 0 && (
+          <button
+            onClick={() => setStepPage(stepPage - 1)}
+            className="apply-button"
+          >
+            Back
+          </button>
+        )}
+      </div>
     </>
   );
 };

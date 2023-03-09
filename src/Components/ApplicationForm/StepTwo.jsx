@@ -9,7 +9,17 @@ const StepTwo = ({ formData, setFormData }) => {
       <div className="form-row">
         <div className="form-wrap">
           <div className="input-wrap">
-            <select className="application-input" name="program" required>
+            <select
+              className="application-input"
+              name="program"
+              required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  program: e.target.value
+                });
+              }}
+            >
               <option value=""></option>
               <option value="">Software Engineering</option>
               <option value="">Accounting</option>
@@ -24,7 +34,12 @@ const StepTwo = ({ formData, setFormData }) => {
               type="text"
               className="application-input"
               name="middleName"
-              required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  previousUni: e.target.value
+                });
+              }}
             />
             <label htmlFor="lastName">Prev. Uni. Attended(If Applicable)</label>
           </div>
@@ -32,97 +47,43 @@ const StepTwo = ({ formData, setFormData }) => {
       </div>
       <div className="form-row">
         <div className="form-wrap">
+          <label className="upload-label" htmlFor="lastName">
+            Upload Your SSCE Result in PDF Format
+          </label>
           <div className="input-wrap">
             <input
               type="file"
-              className="application-inputd"
+              className="application-input-file"
               name="middleName"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  ssce: e.target.value
+                });
+              }}
             />
-            <label htmlFor="lastName">Email</label>
-          </div>
-        </div>
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="middleName"
-              required
-            />
-            <label htmlFor="lastName">Sex</label>
           </div>
         </div>
       </div>
       <div className="form-row">
         <div className="form-wrap">
+          <label className="upload-label" htmlFor="lastName">
+            Upload Your UTME Result in PDF Format
+          </label>
           <div className="input-wrap">
             <input
-              type="text"
-              className="application-input"
+              type="file"
+              className="application-input-file"
               name="middleName"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  utme: e.target.value
+                });
+              }}
             />
-            <label htmlFor="lastName">Nationality</label>
-          </div>
-        </div>
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="middleName"
-              required
-            />
-            <label htmlFor="lastName">State of Origin</label>
-          </div>
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="nameofparent"
-              required
-            />
-            <label htmlFor="nameofparent">Name of Parent/Guardian</label>
-          </div>
-        </div>
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="middleName"
-              required
-            />
-            <label htmlFor="lastName">Sex</label>
-          </div>
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="nameofparent"
-              required
-            />
-            <label htmlFor="nameofparent">Home Address</label>
-          </div>
-        </div>
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="middleName"
-              required
-            />
-            <label htmlFor="lastName">Phone Number</label>
           </div>
         </div>
       </div>

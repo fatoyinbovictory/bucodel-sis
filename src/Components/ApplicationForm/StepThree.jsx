@@ -14,21 +14,17 @@ const StepThree = ({ formData, setFormData }) => {
               className="application-input"
               name="middleName"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  password: e.target.value
+                });
+              }}
             />
             <label htmlFor="lastName">Create Password</label>
           </div>
         </div>
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="middleName"
-              required
-            />
-            <label htmlFor="lastName">Confirm Password</label>
-          </div>
-        </div>
+        
       </div>
     </>
   );
