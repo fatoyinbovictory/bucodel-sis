@@ -54,10 +54,10 @@ const StepOne = ({ formData, setFormData }) => {
             <input
               type="date"
               className="application-input"
-              name="middleName"
+              name="dateofbirth"
               required
             />
-            <label htmlFor="lastName">Date of Birth</label>
+            <label htmlFor="dateofbirth">Date of Birth</label>
           </div>
         </div>
       </div>
@@ -67,10 +67,10 @@ const StepOne = ({ formData, setFormData }) => {
             <input
               type="email"
               className="application-input"
-              name="middleName"
+              name="email"
               required
             />
-            <label htmlFor="lastName">Email</label>
+            <label htmlFor="email">Email</label>
           </div>
         </div>
         <div className="form-wrap">
@@ -78,10 +78,10 @@ const StepOne = ({ formData, setFormData }) => {
             <input
               type="text"
               className="application-input"
-              name="middleName"
+              name="sex"
               required
             />
-            <label htmlFor="lastName">Sex</label>
+            <label htmlFor="sex">Sex</label>
           </div>
         </div>
       </div>
@@ -91,10 +91,10 @@ const StepOne = ({ formData, setFormData }) => {
             <input
               type="text"
               className="application-input"
-              name="middleName"
+              name="nationality"
               required
             />
-            <label htmlFor="lastName">Nationality</label>
+            <label htmlFor="nationality">Nationality</label>
           </div>
         </div>
         <div className="form-wrap">
@@ -102,10 +102,10 @@ const StepOne = ({ formData, setFormData }) => {
             <input
               type="text"
               className="application-input"
-              name="middleName"
+              name="stateoforigin"
               required
             />
-            <label htmlFor="lastName">State of Origin</label>
+            <label htmlFor="stateoforigin">State of Origin</label>
           </div>
         </div>
       </div>
@@ -123,12 +123,11 @@ const StepOne = ({ formData, setFormData }) => {
         </div>
         <div className="form-wrap">
           <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="middleName"
-              required
-            />
+            <select className="application-input" name="program" required>
+              <option value=""></option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
             <label htmlFor="lastName">Sex</label>
           </div>
         </div>

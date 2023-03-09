@@ -3,10 +3,21 @@ import React from "react";
 const StepTwo = ({ formData, setFormData }) => {
   return (
     <>
-    <h1 className="landing-main-header-blue application-header">
+      <h1 className="landing-main-header-blue application-header">
         Academic Info
       </h1>
       <div className="form-row">
+        <div className="form-wrap">
+          <div className="input-wrap">
+            <select className="application-input" name="program" required>
+              <option value=""></option>
+              <option value="">Software Engineering</option>
+              <option value="">Accounting</option>
+              <option value="">Business Administration</option>
+            </select>
+            <label htmlFor="lastName">Program</label>
+          </div>
+        </div>
         <div className="form-wrap">
           <div className="input-wrap">
             <input
@@ -15,18 +26,7 @@ const StepTwo = ({ formData, setFormData }) => {
               name="middleName"
               required
             />
-            <label htmlFor="lastName">Middle Name</label>
-          </div>
-        </div>
-        <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="date"
-              className="application-input"
-              name="middleName"
-              required
-            />
-            <label htmlFor="lastName">Date of Birth</label>
+            <label htmlFor="lastName">Prev. Uni. Attended(If Applicable)</label>
           </div>
         </div>
       </div>
@@ -34,8 +34,8 @@ const StepTwo = ({ formData, setFormData }) => {
         <div className="form-wrap">
           <div className="input-wrap">
             <input
-              type="email"
-              className="application-input"
+              type="file"
+              className="application-inputd"
               name="middleName"
               required
             />
