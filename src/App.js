@@ -37,6 +37,7 @@ import AdminRegistration from "./Pages/Admin/Registrations";
 import AdminStudentReg from "./Pages/Admin/StudentReg";
 import AdminFees from "./Pages/Admin/Fees";
 import AdminStudentFees from "./Pages/Admin/StudentFees";
+import { Context, ContextFacilitator, ContextAdmin } from "./Context/Context";
 
 function App() {
   return (
@@ -117,18 +118,58 @@ function App() {
           <Route exact path="/admin/details" element={<AdminDetails />} />
           <Route exact path="/admin/semester" element={<AdminSemester />} />
           <Route exact path="/admin/programs" element={<AdminPrograms />} />
-          <Route exact path="/admin/programs/create" element={<AdminCreateProgram />} />
-          <Route exact path="/admin/programs/specific" element={<AdminSpecificProgram />} />
-          <Route exact path="/admin/programs/specific/create" element={<AdminCreateCourse />} />
-          <Route exact path="/admin/facilitators" element={<AdminFacilitators />} />
-          <Route exact path="/admin/facilitators/create" element={<AdminCreateFacilitator/>} />
-          <Route exact path="/admin/students" element={<AdminStudents/>} />
-          <Route exact path="/admin/applications" element={<AdminApplications/>} />
-          <Route exact path="/admin/applications/specific" element={<AdminStudentApp/>} />
-          <Route exact path="/admin/studentregistration" element={<AdminRegistration />} />
-          <Route exact path="/admin/studentregistration/specific" element={<AdminStudentReg/>} />
-          <Route exact path="/admin/fees" element={<AdminFees/>} />
-          <Route exact path="/admin/fees/specific" element={<AdminStudentFees/>} />
+          <Route
+            exact
+            path="/admin/programs/create"
+            element={<AdminCreateProgram />}
+          />
+          <Route
+            exact
+            path="/admin/programs/specific"
+            element={<AdminSpecificProgram />}
+          />
+          <Route
+            exact
+            path="/admin/programs/specific/create"
+            element={<AdminCreateCourse />}
+          />
+          <Route
+            exact
+            path="/admin/facilitators"
+            element={<AdminFacilitators />}
+          />
+          <Route
+            exact
+            path="/admin/facilitators/create"
+            element={<AdminCreateFacilitator />}
+          />
+          <Route exact path="/admin/students" element={<AdminStudents />} />
+          <Route
+            exact
+            path="/admin/applications"
+            element={<AdminApplications />}
+          />
+          <Route
+            exact
+            path="/admin/applications/specific"
+            element={<AdminStudentApp />}
+          />
+          <Route
+            exact
+            path="/admin/studentregistration"
+            element={<AdminRegistration />}
+          />
+          <Route
+            exact
+            path="/admin/studentregistration/specific"
+            element={<AdminStudentReg />}
+          />
+          <Route exact path="/admin/fees" element={<AdminFees />} />
+          <Route
+            exact
+            path="/admin/fees/specific"
+            element={<AdminStudentFees />}
+          />
         </Routes>
       </BrowserRouter>
     </>
