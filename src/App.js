@@ -61,127 +61,261 @@ function App() {
           <Route
             exact
             path="/student"
-            element={<StudentDashboard student={student} />}
+            element={
+              student ? (
+                <StudentDashboard student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
-          <Route exact path="/student/personal" element={<StudentPersonal />} />
-          <Route exact path="/student/courses" element={<StudentCourses />} />
+          <Route
+            exact
+            path="/student/personal"
+            element={
+              student ? <StudentPersonal student={student} /> : <StudentLogin />
+            }
+          />
+          <Route
+            exact
+            path="/student/courses"
+            element={
+              student ? <StudentCourses student={student} /> : <StudentLogin />
+            }
+          />
           <Route
             exact
             path="/student/timetable"
-            element={<StudentTimetable />}
+            element={
+              student ? (
+                <StudentTimetable student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
-          <Route exact path="/student/results" element={<StudentResults />} />
+          <Route
+            exact
+            path="/student/results"
+            element={
+              student ? <StudentResults student={student} /> : <StudentLogin />
+            }
+          />
           <Route
             exact
             path="/student/results/2023-2024-1"
-            element={<StudentSpecificResult />}
+            element={
+              student ? (
+                <StudentSpecificResult student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
           <Route
             exact
             path="/student/register/semester"
-            element={<StudentSelectSem />}
+            element={
+              student ? (
+                <StudentSelectSem student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
           <Route
             exact
             path="/student/register/courses"
-            element={<StudentSelectCourses />}
+            element={
+              student ? (
+                <StudentSelectCourses student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
           <Route
             exact
             path="/student/register/courses/courselist"
-            element={<StudentCourselist />}
+            element={
+              student ? (
+                <StudentCourselist student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
           <Route
             exact
             path="/student/register/selectedcourses"
-            element={<StudentSelectedCourses />}
+            element={
+              student ? (
+                <StudentSelectedCourses student={student} />
+              ) : (
+                <StudentLogin />
+              )
+            }
           />
           <Route
             exact
             path="/student/register/submit"
-            element={<StudentSubmit />}
+            element={
+              student ? <StudentSubmit student={student} /> : <StudentLogin />
+            }
           />
-          <Route exact path="/student/fees" element={<StudentFees />} />
+          <Route
+            exact
+            path="/student/fees"
+            element={
+              student ? <StudentFees student={student} /> : <StudentLogin />
+            }
+          />
           <Route
             exact
             path="/facilitator"
-            element={<FacilitatorDashboard facilitator={facilitator} />}
+            element={
+              facilitator ? (
+                <FacilitatorDashboard facilitator={facilitator} />
+              ) : (
+                <FacilitatorLogin />
+              )
+            }
           />
           <Route
             exact
             path="/facilitator/details"
-            element={<FacilitatorDetails />}
+            element={
+              facilitator ? (
+                <FacilitatorDetails facilitator={facilitator} />
+              ) : (
+                <FacilitatorLogin />
+              )
+            }
           />
           <Route
             exact
             path="/facilitator/courses"
-            element={<FacilitatorCourses />}
+            element={
+              facilitator ? (
+                <FacilitatorCourses facilitator={facilitator} />
+              ) : (
+                <FacilitatorLogin />
+              )
+            }
           />
           <Route
             exact
             path="/facilitator/course/details"
-            element={<FacilitatorCourseDetails />}
+            element={
+              facilitator ? (
+                <FacilitatorCourseDetails facilitator={facilitator} />
+              ) : (
+                <FacilitatorLogin />
+              )
+            }
           />
           <Route
             exact
             path="/facilitator/course/details/students"
-            element={<FacilitatorCourseStudents />}
+            element={
+              facilitator ? (
+                <FacilitatorCourseStudents facilitator={facilitator} />
+              ) : (
+                <FacilitatorLogin />
+              )
+            }
           />
-          <Route exact path="/admin" element={<AdminDashboard admin={admin}/>} />
-          <Route exact path="/admin/details" element={<AdminDetails />} />
-          <Route exact path="/admin/semester" element={<AdminSemester />} />
-          <Route exact path="/admin/programs" element={<AdminPrograms />} />
+          <Route
+            exact
+            path="/admin"
+            element={admin ? <AdminDashboard admin={admin} /> : <AdminLogin />}
+          />
+          <Route
+            exact
+            path="/admin/details"
+            element={admin ? <AdminDetails admin={admin} /> : <AdminLogin />}
+          />
+          <Route
+            exact
+            path="/admin/semester"
+            element={admin ? <AdminSemester admin={admin} /> : <AdminLogin />}
+          />
+          <Route
+            exact
+            path="/admin/programs"
+            element={admin ? <AdminPrograms admin={admin} /> : <AdminLogin />}
+          />
           <Route
             exact
             path="/admin/programs/create"
-            element={<AdminCreateProgram />}
+            element={
+              admin ? <AdminCreateProgram admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
             path="/admin/programs/specific"
-            element={<AdminSpecificProgram />}
+            element={
+              admin ? <AdminSpecificProgram admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
             path="/admin/programs/specific/create"
-            element={<AdminCreateCourse />}
+            element={
+              admin ? <AdminCreateCourse admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
             path="/admin/facilitators"
-            element={<AdminFacilitators />}
+            element={
+              admin ? <AdminFacilitators admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
             path="/admin/facilitators/create"
-            element={<AdminCreateFacilitator />}
+            element={
+              admin ? <AdminCreateFacilitator admin={admin} /> : <AdminLogin />
+            }
           />
           <Route exact path="/admin/students" element={<AdminStudents />} />
           <Route
             exact
             path="/admin/applications"
-            element={<AdminApplications />}
+            element={
+              admin ? <AdminApplications admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
             path="/admin/applications/specific"
-            element={<AdminStudentApp />}
+            element={admin ? <AdminStudentApp admin={admin} /> : <AdminLogin />}
           />
           <Route
             exact
             path="/admin/studentregistration"
-            element={<AdminRegistration />}
+            element={
+              admin ? <AdminRegistration admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
             path="/admin/studentregistration/specific"
-            element={<AdminStudentReg />}
+            element={admin ? <AdminStudentReg admin={admin} /> : <AdminLogin />}
           />
-          <Route exact path="/admin/fees" element={<AdminFees />} />
+          <Route
+            exact
+            path="/admin/fees"
+            element={admin ? <AdminFees admin={admin} /> : <AdminLogin />}
+          />
           <Route
             exact
             path="/admin/fees/specific"
-            element={<AdminStudentFees />}
+            element={
+              admin ? <AdminStudentFees admin={admin} /> : <AdminLogin />
+            }
           />
         </Routes>
       </BrowserRouter>
