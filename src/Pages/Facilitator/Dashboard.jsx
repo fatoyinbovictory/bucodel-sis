@@ -1,7 +1,8 @@
 import React from "react";
 import FacilitatorNav from "../../Components/FacilitatorNav";
 
-const Dashboard = () => {
+const Dashboard = ({facilitator}) => {
+  console.log(facilitator);
   return (
     <>
       <FacilitatorNav />

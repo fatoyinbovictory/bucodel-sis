@@ -3,7 +3,8 @@ import StudentNav from "../../Components/StudentNav";
 import "../../CSS/StudentNav.css";
 import "../../CSS/Profile.css";
 
-const Dashboard = () => {
+const Dashboard = ({student}) => {
+  console.log(student);
   return (
     <>
       <StudentNav />

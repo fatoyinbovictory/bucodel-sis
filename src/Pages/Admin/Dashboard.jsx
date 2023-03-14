@@ -1,7 +1,8 @@
 import React from "react";
 import AdminNav from "../../Components/AdminNav";
 
-const Dashboard = () => {
+const Dashboard = ({admin}) => {
+  console.log(admin);
   return (
     <>
     <AdminNav/>

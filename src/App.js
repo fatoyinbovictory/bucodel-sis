@@ -38,8 +38,13 @@ import AdminStudentReg from "./Pages/Admin/StudentReg";
 import AdminFees from "./Pages/Admin/Fees";
 import AdminStudentFees from "./Pages/Admin/StudentFees";
 import { Context, ContextFacilitator, ContextAdmin } from "./Context/Context";
+import { useContext } from "react";
 
 function App() {
+  const { student } = useContext(Context);
+  const { facilitator } = useContext(ContextFacilitator);
+  const { admin } = useContext(ContextAdmin);
+
   return (
     <>
       <BrowserRouter>
@@ -53,7 +58,11 @@ function App() {
             element={<FacilitatorLogin />}
           />
           <Route exact path="/adminlogin" element={<AdminLogin />} />
-          <Route exact path="/student" element={<StudentDashboard />} />
+          <Route
+            exact
+            path="/student"
+            element={<StudentDashboard student={student} />}
+          />
           <Route exact path="/student/personal" element={<StudentPersonal />} />
           <Route exact path="/student/courses" element={<StudentCourses />} />
           <Route
@@ -93,7 +102,11 @@ function App() {
             element={<StudentSubmit />}
           />
           <Route exact path="/student/fees" element={<StudentFees />} />
-          <Route exact path="/facilitator" element={<FacilitatorDashboard />} />
+          <Route
+            exact
+            path="/facilitator"
+            element={<FacilitatorDashboard facilitator={facilitator} />}
+          />
           <Route
             exact
             path="/facilitator/details"
@@ -114,7 +127,7 @@ function App() {
             path="/facilitator/course/details/students"
             element={<FacilitatorCourseStudents />}
           />
-          <Route exact path="/admin" element={<AdminDashboard />} />
+          <Route exact path="/admin" element={<AdminDashboard admin={admin}/>} />
           <Route exact path="/admin/details" element={<AdminDetails />} />
           <Route exact path="/admin/semester" element={<AdminSemester />} />
           <Route exact path="/admin/programs" element={<AdminPrograms />} />

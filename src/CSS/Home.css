@@ -90,6 +90,8 @@ main {
   width: 300px;
   border: none;
   border-radius: 20px;
+  display: grid;
+  place-content: center;
 }
 
 .form-row {

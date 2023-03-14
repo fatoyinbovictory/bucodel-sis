@@ -137,7 +137,7 @@
   cursor: pointer;
 }
 
-.btn-medium.red{
+.btn-medium.red {
   background-color: var(--red);
 }
 
@@ -182,6 +182,22 @@ input[type="file"]::file-selector-button {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
     rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
   margin: 20px;
+}
+
+.success {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  color: var(--success-text);
+  background-color: var(--success-background);
+}
+
+.error {
+  margin: 20px;
+  padding: 20px;
+  border-radius: 20px;
+  color: var(--error-text);
+  background-color: var(--error-background);
 }
 
 @media screen and (max-width: 750px) {
