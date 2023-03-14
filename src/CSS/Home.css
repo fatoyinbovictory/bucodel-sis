@@ -92,6 +92,7 @@ main {
   border-radius: 20px;
   display: grid;
   place-content: center;
+  cursor: pointer;
 }
 
 .form-row {

@@ -27,43 +27,91 @@ body {
 
 .borders {
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 25px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   position: relative;
-  width: 25px; }
-  .borders:after, .borders:before {
-    border: 3px solid var(--gold);
-    border-radius: 100%;
-    position: absolute;
-    content: '';
-    display: block; }
-  .borders:before {
-    border-bottom-color: transparent;
-    border-left-color: transparent;
-    animation: spin .75s infinite linear reverse;
-    height: 15px;
-    width: 15px; }
-  .borders:after {
-    -webkit-animation: spin .5s infinite linear;
-            animation: spin .5s infinite linear;
-    height: 25px;
-    width: 25px;
-    border-right-color: transparent;
-    border-top-color: transparent; }
+  width: 25px;
+}
+.borders:after,
+.borders:before {
+  border: 3px solid var(--gold);
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+  display: block;
+}
+.borders:before {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation: spin 0.75s infinite linear reverse;
+  height: 15px;
+  width: 15px;
+}
+.borders:after {
+  -webkit-animation: spin 0.5s infinite linear;
+  animation: spin 0.5s infinite linear;
+  height: 25px;
+  width: 25px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
+.borders-profile {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  height: 65px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  width: 65px;
+}
+.borders-profile:after,
+.borders-profile:before {
+  border: 6px solid var(--gold);
+  border-radius: 100%;
+  position: absolute;
+  content: "";
+  display: block;
+}
+.borders-profile:before {
+  border-bottom-color: transparent;
+  border-left-color: transparent;
+  animation: spin 0.75s infinite linear reverse;
+  height: 45px;
+  width: 45px;
+}
+.borders-profile:after {
+  -webkit-animation: spin 0.5s infinite linear;
+  animation: spin 0.5s infinite linear;
+  height: 65px;
+  width: 65px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+}
+
 
 @-webkit-keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg);
+  }
+}
 
 @keyframes spin {
   to {
     -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+    transform: rotate(360deg);
+  }
+}
