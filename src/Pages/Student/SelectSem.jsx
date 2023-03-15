@@ -16,6 +16,7 @@ const SelectSem = ({ student }) => {
   const [success, setSuccess] = useState(false);
   const [submitFail, setSubmitFail] = useState(false);
   const [submitLoading, setSubmitLoading] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setLoadFail(false);
@@ -48,8 +49,8 @@ const SelectSem = ({ student }) => {
       setSubmitLoading(false);
       setSubmitFail(false);
       setTimeout(() => {
-        setSuccess(false);
-      }, 3000);
+        navigate("/student/register/courses");
+      }, 2000);
     } catch (err) {
       setSubmitFail(true);
       setSubmitLoading(false);
@@ -102,6 +103,8 @@ const SelectSem = ({ student }) => {
                         <button
                           className="courses-table-button"
                           onClick={() => {
+                            setSemester(semesterData.semester);
+                            setSession(semesterData.session);
                             handleSubmit(
                               semesterData.semester,
                               semesterData.session

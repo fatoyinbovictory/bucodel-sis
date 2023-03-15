@@ -136,7 +136,7 @@ function App() {
           />
           <Route
             exact
-            path="/student/register/courses/courselist"
+            path="/student/register/courses/:id"
             element={
               student ? (
                 <StudentCourselist student={student} />
