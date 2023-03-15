@@ -1,15 +1,19 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "../../Api/axios";
 import StudentNav from "../../Components/StudentNav";
-import "../../CSS/StudentNav.css";
+import logoutIcon from "../../Icons/logout.svg";
+import { Context } from "../../Context/Context";
 import "../../CSS/Profile.css";
+import "../../CSS/StudentNav.css";
 
 const Dashboard = ({ student }) => {
   const [studentInfo, setStudentInfo] = useState();
   const [loading, setLoading] = useState(true);
   const [errMessage, setErrMessage] = useState();
   const [loadFail, setLoadFail] = useState(false);
+  const { coordinator, dispatch } = useContext(Context);
+  const navigate = useNavigate();
 
   useEffect(() => {
     document.title = "Student's Home";
@@ -22,9 +26,7 @@ const Dashboard = ({ student }) => {
         const res = await axios.get(`/api/student/dashboard/${student.id}`);
         setStudentInfo(res.data);
         setLoading(false);
-        console.log(res.data);
       } catch (error) {
-        console.log(error.response.data.error);
         setLoadFail(true);
         setLoading(false);
         setErrMessage(error.response.data.error);
@@ -32,6 +34,12 @@ const Dashboard = ({ student }) => {
     };
     fetchData();
   }, []);
+
+  function logOut() {
+    dispatch({ type: "LOGOUT" });
+    navigate("/studentlogin");
+  }
+
   return (
     <>
       {loading ? (
@@ -41,6 +49,7 @@ const Dashboard = ({ student }) => {
       ) : loadFail ? (
         <div className="center-load">
           <div className="error">{errMessage}</div>
+          <button className="login-btn" onClick={logOut}>Logout</button>
         </div>
       ) : (
         <div className="loaded">

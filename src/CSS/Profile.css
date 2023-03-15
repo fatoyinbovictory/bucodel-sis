@@ -136,6 +136,13 @@
   margin: 20px;
   cursor: pointer;
 }
+/* 
+.logout-btn {
+  display: flex;
+  border: none;
+  margin: 10px 0 0 -15px;
+  background-color: transparent;
+} */
 
 .btn-medium.red {
   background-color: var(--red);
@@ -192,9 +199,26 @@ input[type="file"]::file-selector-button {
   background-color: var(--success-background);
 }
 
+.success-mini {
+  margin: 2px;
+  padding: 2px;
+  border-radius: 20px;
+  color: var(--success-text);
+  background-color: var(--success-background);
+}
+
+
 .error {
   margin-top: 20px;
   padding: 20px;
+  border-radius: 20px;
+  color: var(--error-text);
+  background-color: var(--error-background);
+}
+
+.error-mini {
+  margin-top: 2px;
+  padding: 2px;
   border-radius: 20px;
   color: var(--error-text);
   background-color: var(--error-background);
@@ -216,7 +240,8 @@ input[type="file"]::file-selector-button {
   }
 }
 
-.center-load{
+.center-load {
+  margin: 20px;
   height: 100vh;
   display: grid;
   place-content: center;
