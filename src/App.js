@@ -205,7 +205,7 @@ function App() {
           />
           <Route
             exact
-            path="/facilitator/course/details"
+            path="/facilitator/course/:id"
             element={
               facilitator ? (
                 <FacilitatorCourseDetails facilitator={facilitator} />
@@ -216,7 +216,7 @@ function App() {
           />
           <Route
             exact
-            path="/facilitator/course/details/students"
+            path="/facilitator/course/students/:id"
             element={
               facilitator ? (
                 <FacilitatorCourseStudents facilitator={facilitator} />
