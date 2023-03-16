@@ -80,7 +80,7 @@ const Submit = ({ student }) => {
               <p className="personal-info">{studentInfo.program}</p>
             </li>
           </ul>
-          <button className="btn-medium" onClick={handleSubmit}>
+          <button className="btn-medium centered" onClick={handleSubmit}>
             {submitLoading ? <div className="borders"></div> : "Submit"}
           </button>
           {success && (

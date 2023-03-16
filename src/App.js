@@ -254,14 +254,14 @@ function App() {
           />
           <Route
             exact
-            path="/admin/programs/specific"
+            path="/admin/programs/:id"
             element={
               admin ? <AdminSpecificProgram admin={admin} /> : <AdminLogin />
             }
           />
           <Route
             exact
-            path="/admin/programs/specific/create"
+            path="/admin/programs/:id/create"
             element={
               admin ? <AdminCreateCourse admin={admin} /> : <AdminLogin />
             }

@@ -144,6 +144,11 @@
   background-color: transparent;
 } */
 
+.centered{
+  display: grid;
+  place-items: center;
+}
+
 .btn-medium.red {
   background-color: var(--red);
 }

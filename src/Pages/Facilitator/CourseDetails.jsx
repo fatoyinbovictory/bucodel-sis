@@ -95,7 +95,7 @@ const CourseDetails = () => {
                   <label htmlFor="classlink">Link</label>
                 </div>
               </div>
-              <button className="apply-button" onClick={handleSubmit}>
+              <button className="apply-button centered" onClick={handleSubmit}>
                 {submitLoading ? <div className="borders"></div> : "Set"}
               </button>
               {success && <div className="success">Class Link set successfully</div>}
