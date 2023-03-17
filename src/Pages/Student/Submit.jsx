@@ -87,6 +87,10 @@ const Submit = ({ student }) => {
             <div className="success">Registeration successfully submited</div>
           )}
           {submitFail && <div className="error">{errMessage}</div>}
+          <p className="personal-info-title">
+            You are free to submit, but your semester registration will not be approved if your payment has
+            not been approved.
+          </p>
         </section>
       )}
     </>

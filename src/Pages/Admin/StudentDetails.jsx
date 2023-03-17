@@ -8,16 +8,10 @@ const StudentApp = () => {
   const [loading, setLoading] = useState(true);
   const [loadFail, setLoadFail] = useState(false);
   const [errMessage, setErrMessage] = useState();
-  const [isAccept, setIsAccept] = useState(false);
-  const [isDeny, setIsDeny] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [submitFail, setSubmitFail] = useState(false);
-  const [submitLoading, setSubmitLoading] = useState(false);
-  const navigate = useNavigate();
   const { id } = useParams();
 
   useEffect(() => {
-    document.title = "Student Application";
+    document.title = "Student";
   }, []);
 
   useEffect(() => {
@@ -36,43 +30,6 @@ const StudentApp = () => {
     };
     fetchData();
   }, []);
-
-  const handleApprove = async () => {
-    setSubmitLoading(true);
-    setSubmitFail(false);
-    try {
-      await axios.patch(`/api/admin/approveStudentApp/${id}`);
-      setSuccess(true);
-      setSubmitLoading(false);
-      setSubmitFail(false);
-      setTimeout(() => {
-        navigate("/admin/applications");
-      }, 3000);
-    } catch (error) {
-      setSubmitFail(true);
-      setSubmitLoading(false);
-      setErrMessage(error.response.data.error);
-    }
-  };
-
-  const handleDecline = async () => {
-    setSubmitLoading(true);
-    setSubmitFail(false);
-    try {
-      await axios.delete(`/api/admin/declineStudentApp/${id}`);
-      setSuccess(true);
-      setSubmitLoading(false);
-      setSubmitFail(false);
-      setTimeout(() => {
-        navigate("/admin/applications");
-      }, 3000);
-    } catch (error) {
-      setSubmitFail(true);
-      setSubmitLoading(false);
-      setErrMessage(error.response.data.error);
-    }
-  };
-
   return (
     <>
       <AdminNav />
@@ -86,7 +43,7 @@ const StudentApp = () => {
         </div>
       ) : (
         <section className="profile-container loaded">
-          <h1 className="landing-main-header-blue">Application</h1>
+          <h1 className="landing-main-header-blue">Student</h1>
           <ul className="personal-info-list">
             <li className="personal-info-row">
               <p className="personal-info-title">Name</p>
@@ -104,10 +61,6 @@ const StudentApp = () => {
             </li>
             <li className="personal-info-row">
               <p className="personal-info-title">Phone Number</p>
-              <p className="personal-info">{student.phone}</p>
-            </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Sex</p>
               <p className="personal-info">{student.sex}</p>
             </li>
             <li className="personal-info-row">
@@ -131,36 +84,6 @@ const StudentApp = () => {
               <p className="personal-info">{student.stateOfOrigin}</p>
             </li>
           </ul>
-          <button
-            className="btn-medium centered"
-            onClick={() => {
-              setIsAccept(true);
-              handleApprove();
-            }}
-          >
-            {submitLoading && isAccept ? (
-              <div className="borders"></div>
-            ) : (
-              "Approve"
-            )}
-          </button>
-          {success && isAccept && (
-            <div className="success">Student Approved successfully</div>
-          )}
-          {submitFail && isAccept && <div className="error">{errMessage}</div>}
-          <button
-            className="btn-medium red centered"
-            onClick={() => {
-              setIsDeny(true);
-              handleDecline();
-            }}
-          >
-            {submitLoading && isDeny ? <div className="borders"></div> : "Deny"}
-          </button>
-          {success && isDeny && (
-            <div className="success">Student denied successfully</div>
-          )}
-          {submitFail && isDeny && <div className="error">{errMessage}</div>}
         </section>
       )}
     </>

@@ -31,6 +31,7 @@ import AdminCreateCourse from "./Pages/Admin/CreateCourse";
 import AdminFacilitators from "./Pages/Admin/Facilitators";
 import AdminCreateFacilitator from "./Pages/Admin/CreateFacilitator";
 import AdminStudents from "./Pages/Admin/Students";
+import AdminStudentDetails from "./Pages/Admin/StudentDetails";
 import AdminApplications from "./Pages/Admin/Applications";
 import AdminStudentApp from "./Pages/Admin/StudentApp";
 import AdminRegistration from "./Pages/Admin/Registrations";
@@ -280,7 +281,18 @@ function App() {
               admin ? <AdminCreateFacilitator admin={admin} /> : <AdminLogin />
             }
           />
-          <Route exact path="/admin/students" element={<AdminStudents />} />
+          <Route
+            exact
+            path="/admin/students"
+            element={admin ? <AdminStudents admin={admin} /> : <AdminLogin />}
+          />
+          <Route
+            exact
+            path="/admin/students/:id"
+            element={
+              admin ? <AdminStudentDetails admin={admin} /> : <AdminLogin />
+            }
+          />
           <Route
             exact
             path="/admin/applications"
@@ -290,7 +302,7 @@ function App() {
           />
           <Route
             exact
-            path="/admin/applications/specific"
+            path="/admin/applications/:id"
             element={admin ? <AdminStudentApp admin={admin} /> : <AdminLogin />}
           />
           <Route
@@ -302,7 +314,7 @@ function App() {
           />
           <Route
             exact
-            path="/admin/studentregistration/specific"
+            path="/admin/studentregistration/:id"
             element={admin ? <AdminStudentReg admin={admin} /> : <AdminLogin />}
           />
           <Route
@@ -312,7 +324,7 @@ function App() {
           />
           <Route
             exact
-            path="/admin/fees/specific"
+            path="/admin/fees/:id"
             element={
               admin ? <AdminStudentFees admin={admin} /> : <AdminLogin />
             }
