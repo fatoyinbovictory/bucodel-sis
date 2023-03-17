@@ -213,6 +213,7 @@ textarea {
   color: var(--background-color);
   border: none;
   margin: 5px;
+  cursor: pointer;
 }
 
 footer {

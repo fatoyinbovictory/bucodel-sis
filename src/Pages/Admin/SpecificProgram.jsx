@@ -109,7 +109,9 @@ const SpecificProgram = () => {
                       {course.creditHours}
                     </td>
                     <td className="courses-table-data" data-label="">
-                      <button className="courses-table-button">More</button>
+                      <Link to={`/admin/program/course/${course._id}`}>
+                        <button className="courses-table-button">More</button>
+                      </Link>
                     </td>
                   </tr>
                 );

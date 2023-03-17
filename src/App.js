@@ -28,6 +28,7 @@ import AdminPrograms from "./Pages/Admin/Programs";
 import AdminCreateProgram from "./Pages/Admin/CreateProgram";
 import AdminSpecificProgram from "./Pages/Admin/SpecificProgram";
 import AdminCreateCourse from "./Pages/Admin/CreateCourse";
+import AdminCourseDetails from "./Pages/Admin/CourseDetails"
 import AdminFacilitators from "./Pages/Admin/Facilitators";
 import AdminCreateFacilitator from "./Pages/Admin/CreateFacilitator";
 import AdminStudents from "./Pages/Admin/Students";
@@ -265,6 +266,13 @@ function App() {
             path="/admin/programs/:id/create"
             element={
               admin ? <AdminCreateCourse admin={admin} /> : <AdminLogin />
+            }
+          />
+          <Route
+            exact
+            path="/admin/program/course/:id"
+            element={
+              admin ? <AdminCourseDetails admin={admin} /> : <AdminLogin />
             }
           />
           <Route

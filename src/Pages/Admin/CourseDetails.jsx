@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "../../Api/axios";
-import FacilitatorNav from "../../Components/FacilitatorNav";
+import AdminNav from "../../Components/AdminNav";
 
 const CourseDetails = () => {
   const [courseInfo, setCourseInfo] = useState();
@@ -11,7 +11,7 @@ const CourseDetails = () => {
   const [success, setSuccess] = useState(false);
   const [submitFail, setSubmitFail] = useState(false);
   const [submitLoading, setSubmitLoading] = useState(false);
-  const [classLink, setClassLink] = useState(false);
+  const [time, setTime] = useState(false);
   const { id } = useParams();
 
   useEffect(() => {
@@ -39,8 +39,8 @@ const CourseDetails = () => {
     setSubmitFail(false);
     try {
       await axios.patch(
-        `/api/facilitator/addCourseLink/${courseInfo._id}`,
-        JSON.stringify({ classLink }),
+        `/api/admin/addCourseTime/${courseInfo._id}`,
+        JSON.stringify({ time }),
         {
           headers: { "Content-type": "application/json" }
         }
@@ -60,7 +60,7 @@ const CourseDetails = () => {
 
   return (
     <>
-      <FacilitatorNav />
+      <AdminNav />
       {loading ? (
         <div className="center-load">
           <div className="borders-profile"></div>
@@ -82,11 +82,7 @@ const CourseDetails = () => {
               <p className="personal-info">{courseInfo.students.length}</p>
             </li>
             <li className="personal-info-row">
-              <p className="personal-info-title">Course Time</p>
-              <p className="personal-info">{courseInfo.time? courseInfo.time : "Not Set"}</p>
-            </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Set LMS Class Link</p>
+              <p className="personal-info-title">Set Course Time</p>
               <div className="form-wrap profile">
                 <div className="input-wrap">
                   <input
@@ -94,7 +90,7 @@ const CourseDetails = () => {
                     className="application-input"
                     name="classlink"
                     required
-                    onChange={(e) => setClassLink(e.target.value)}
+                    onChange={(e) => setTime(e.target.value)}
                   />
                   <label htmlFor="classlink">Link</label>
                 </div>
@@ -102,19 +98,11 @@ const CourseDetails = () => {
               <button className="apply-button centered" onClick={handleSubmit}>
                 {submitLoading ? <div className="borders"></div> : "Set"}
               </button>
-              {success && <div className="success">Class Link set successfully</div>}
+              {success && (
+                <div className="success">Class Time set successfully</div>
+              )}
               {submitFail && <div className="error">{errMessage}</div>}
             </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Upload Academic Media</p>
-              <input type="file" name="upload-fees" id="" />
-            </li>
-            <Link
-              to={`/facilitator/course/students/${courseInfo._id}`}
-              className="facilitator-link"
-            >
-              View & Grade Students
-            </Link>
           </ul>
         </section>
       )}
