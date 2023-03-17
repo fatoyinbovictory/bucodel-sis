@@ -96,23 +96,6 @@ const StepOne = ({ formData, setFormData }) => {
             <label htmlFor="email">Email</label>
           </div>
         </div>
-        {/* <div className="form-wrap">
-          <div className="input-wrap">
-            <input
-              type="text"
-              className="application-input"
-              name="sex"
-              required
-              onChange={(e) => {
-                setFormData({
-                  ...formData,
-                  sex: e.target.value
-                });
-              }}
-            />
-            <label htmlFor="sex">Sex</label>
-          </div>
-        </div> */}
         <div className="form-wrap">
           <div className="input-wrap">
             <select
@@ -127,8 +110,8 @@ const StepOne = ({ formData, setFormData }) => {
               }}
             >
               <option value=""></option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
             </select>
             <label htmlFor="lastName">Sex</label>
           </div>
@@ -141,6 +124,12 @@ const StepOne = ({ formData, setFormData }) => {
               type="text"
               className="application-input"
               name="nationality"
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  nationality: e.target.value
+                });
+              }}
               required
             />
             <label htmlFor="nationality">Nationality</label>
@@ -152,6 +141,12 @@ const StepOne = ({ formData, setFormData }) => {
               type="text"
               className="application-input"
               name="stateoforigin"
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  stateOfOrigin: e.target.value
+                });
+              }}
               required
             />
             <label htmlFor="stateoforigin">State of Origin</label>
@@ -165,6 +160,12 @@ const StepOne = ({ formData, setFormData }) => {
               type="text"
               className="application-input"
               name="nameofparent"
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  nameOfGuardian: e.target.value
+                });
+              }}
               required
             />
             <label htmlFor="nameofparent">Name of Parent/Guardian</label>
@@ -177,6 +178,12 @@ const StepOne = ({ formData, setFormData }) => {
               className="application-input"
               name="placeOfBirth"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  placeOfBirth: e.target.value
+                });
+              }}
             />
             <label htmlFor="placeOfBirth">Place of Birth</label>
           </div>
@@ -190,6 +197,12 @@ const StepOne = ({ formData, setFormData }) => {
               className="application-input"
               name="nameofparent"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  address: e.target.value
+                });
+              }}
             />
             <label htmlFor="nameofparent">Home Address</label>
           </div>
@@ -201,6 +214,12 @@ const StepOne = ({ formData, setFormData }) => {
               className="application-input"
               name="middleName"
               required
+              onChange={(e) => {
+                setFormData({
+                  ...formData,
+                  phone: e.target.value
+                });
+              }}
             />
             <label htmlFor="lastName">Phone Number</label>
           </div>

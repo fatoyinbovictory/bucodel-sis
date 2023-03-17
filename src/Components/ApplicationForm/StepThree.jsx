@@ -10,7 +10,7 @@ const StepThree = ({ formData, setFormData }) => {
         <div className="form-wrap">
           <div className="input-wrap">
             <input
-              type="text"
+              type="password"
               className="application-input"
               name="middleName"
               required

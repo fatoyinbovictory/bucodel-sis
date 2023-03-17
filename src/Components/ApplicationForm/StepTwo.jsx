@@ -21,9 +21,9 @@ const StepTwo = ({ formData, setFormData }) => {
               }}
             >
               <option value=""></option>
-              <option value="">Software Engineering</option>
-              <option value="">Accounting</option>
-              <option value="">Business Administration</option>
+              <option value="Software Engineering">Software Engineering</option>
+              <option value="Accounting">Accounting</option>
+              <option value="Accounting">Computer Science</option>
             </select>
             <label htmlFor="lastName">Program</label>
           </div>
