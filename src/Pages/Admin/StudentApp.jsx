@@ -5,6 +5,7 @@ import AdminNav from "../../Components/AdminNav";
 
 const StudentApp = () => {
   const [student, setStudent] = useState();
+  const [declineMessage, setDeclineMessage] = useState();
   const [loading, setLoading] = useState(true);
   const [loadFail, setLoadFail] = useState(false);
   const [errMessage, setErrMessage] = useState();
@@ -41,7 +42,13 @@ const StudentApp = () => {
     setSubmitLoading(true);
     setSubmitFail(false);
     try {
-      await axios.patch(`/api/admin/approveStudentApp/${id}`);
+      await axios.patch(
+        `/api/admin/approveStudentApp/${id}`,
+        JSON.stringify({ studentEmail: student.email }),
+        {
+          headers: { "Content-type": "application/json" }
+        }
+      );
       setSuccess(true);
       setSubmitLoading(false);
       setSubmitFail(false);
@@ -56,20 +63,31 @@ const StudentApp = () => {
   };
 
   const handleDecline = async () => {
-    setSubmitLoading(true);
-    setSubmitFail(false);
-    try {
-      await axios.delete(`/api/admin/declineStudentApp/${id}`);
-      setSuccess(true);
-      setSubmitLoading(false);
-      setSubmitFail(false);
-      setTimeout(() => {
-        navigate("/admin/applications");
-      }, 3000);
-    } catch (error) {
+    if (!declineMessage) {
       setSubmitFail(true);
-      setSubmitLoading(false);
-      setErrMessage(error.response.data.error);
+      setErrMessage("Please add the reason the student has been denied");
+    } else {
+      setSubmitLoading(true);
+      setSubmitFail(false);
+      try {
+        await axios.post(
+          `/api/admin/declineStudentApp/${id}`,
+          JSON.stringify({ studentEmail: student.email, declineMessage }),
+          {
+            headers: { "Content-type": "application/json" }
+          }
+        );
+        setSuccess(true);
+        setSubmitLoading(false);
+        setSubmitFail(false);
+        setTimeout(() => {
+          navigate("/admin/applications");
+        }, 3000);
+      } catch (error) {
+        setSubmitFail(true);
+        setSubmitLoading(false);
+        setErrMessage(error.response.data.error);
+      }
     }
   };
 
@@ -136,14 +154,18 @@ const StudentApp = () => {
               className="facilitator-link"
             >
               View {student.firstName}'s uploaded SSCE result
-            </a> <br /><br />
+            </a>{" "}
+            <br />
+            <br />
             <a
               href={`http://localhost:5000/${student.pathToUtme}`}
               target="_blank"
               className="facilitator-link"
             >
               View {student.firstName}'s uploaded UTME result
-            </a> <br /><br />
+            </a>{" "}
+            <br />
+            <br />
           </ul>
           <button
             className="btn-medium centered"
@@ -162,6 +184,15 @@ const StudentApp = () => {
             <div className="success">Student Approved successfully</div>
           )}
           {submitFail && isAccept && <div className="error">{errMessage}</div>}
+          <textarea
+            name=""
+            id=""
+            cols="24"
+            rows="5"
+            className="input-select"
+            placeholder="Reason For Denial"
+            onChange={(e) => setDeclineMessage(e.target.value)}
+          ></textarea>
           <button
             className="btn-medium red centered"
             onClick={() => {
