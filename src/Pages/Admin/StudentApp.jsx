@@ -130,6 +130,20 @@ const StudentApp = () => {
               <p className="personal-info-title">State of Origin</p>
               <p className="personal-info">{student.stateOfOrigin}</p>
             </li>
+            <a
+              href={`http://localhost:5000/${student.pathToSsce}`}
+              target="_blank"
+              className="facilitator-link"
+            >
+              View {student.firstName}'s uploaded SSCE result
+            </a> <br /><br />
+            <a
+              href={`http://localhost:5000/${student.pathToUtme}`}
+              target="_blank"
+              className="facilitator-link"
+            >
+              View {student.firstName}'s uploaded UTME result
+            </a> <br /><br />
           </ul>
           <button
             className="btn-medium centered"

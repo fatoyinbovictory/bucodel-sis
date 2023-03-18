@@ -5,6 +5,8 @@ import StudentNav from "../../Components/StudentNav";
 
 const Fees = ({ student }) => {
   const [programFee, setProgramFee] = useState();
+  const [feeFile, setFeeFile] = useState();
+  const [pathToFee, setPathToFee] = useState();
   const [loading, setLoading] = useState(true);
   const [errMessage, setErrMessage] = useState();
   const [loadFail, setLoadFail] = useState(false);
@@ -35,10 +37,15 @@ const Fees = ({ student }) => {
   }, []);
 
   const handleSubmit = async () => {
+    const formData = new FormData();
+    formData.append("pathToFee", pathToFee);
+    formData.append("feeFile", feeFile);
     setSubmitLoading(true);
     setSubmitFail(false);
     try {
-      await axios.patch(`/api/student/feePayment/${student.id}`);
+      await axios.patch(`/api/student/feePayment/${student.id}`, formData, {
+        headers: { "Content-type": "multipart/form-data" }
+      });
       setSuccess(true);
       setSubmitLoading(false);
       setSubmitFail(false);
@@ -78,7 +85,17 @@ const Fees = ({ student }) => {
             </li>
             <li className="personal-info-row">
               <p className="personal-info-title">Upload Evidence of Payment</p>
-              <input type="file" name="upload-fees" id="" />
+              <input
+                type="file"
+                name="upload-fees"
+                id=""
+                onChange={(e) => {
+                  setPathToFee(
+                    `uploads/fees/${e.target.files[0].name}`
+                  );
+                  setFeeFile(e.target.files[0]);
+                }}
+              />
             </li>
           </ul>
           <button className="btn-medium centered" onClick={handleSubmit}>

@@ -105,10 +105,6 @@ const CourseDetails = () => {
               {success && <div className="success">Class Link set successfully</div>}
               {submitFail && <div className="error">{errMessage}</div>}
             </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Upload Academic Media</p>
-              <input type="file" name="upload-fees" id="" />
-            </li>
             <Link
               to={`/facilitator/course/students/${courseInfo._id}`}
               className="facilitator-link"

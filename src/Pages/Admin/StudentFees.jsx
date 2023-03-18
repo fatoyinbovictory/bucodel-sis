@@ -114,6 +114,14 @@ const StudentFees = () => {
               <p className="personal-info-title">Semester</p>
               <p className="personal-info">{student.semester}</p>
             </li>
+            <br />
+            <a
+              href={`http://localhost:5000/${student.pathToFee}`}
+              target="_blank"
+              className="facilitator-link"
+            >
+              View {student.firstName}'s uploaded Fee Payment Evidence
+            </a> <br /><br />
           </ul>
           <button
             className="btn-medium centered"
