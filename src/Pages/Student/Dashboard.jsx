@@ -49,7 +49,12 @@ const Dashboard = ({ student }) => {
       ) : loadFail ? (
         <div className="center-load">
           <div className="error">{errMessage}</div>
-          <button className="login-btn" onClick={logOut}>Logout</button>
+          <br />
+          <div className="centered">
+            <button className="login-btn" onClick={logOut}>
+              Logout
+            </button>
+          </div>
         </div>
       ) : (
         <div className="loaded">
