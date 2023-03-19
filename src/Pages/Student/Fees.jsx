@@ -5,6 +5,7 @@ import StudentNav from "../../Components/StudentNav";
 
 const Fees = ({ student }) => {
   const [programFee, setProgramFee] = useState();
+  const [regStatus, setRegStatus] = useState();
   const [feeFile, setFeeFile] = useState();
   const [pathToFee, setPathToFee] = useState();
   const [loading, setLoading] = useState(true);
@@ -26,6 +27,16 @@ const Fees = ({ student }) => {
           }
         );
         setProgramFee(res.data.programFee);
+        // setLoading(false);
+      } catch (error) {
+        setLoadFail(true);
+        setLoading(false);
+        setErrMessage(error.response.data.error);
+      }
+      try {
+        const res = await axios.get(`/api/student/getStatus/${student.id}`);
+        setRegStatus(res.data);
+        console.log(res.data);
         setLoading(false);
       } catch (error) {
         setLoadFail(true);
@@ -73,7 +84,7 @@ const Fees = ({ student }) => {
           <ul className="personal-info-list">
             <li className="personal-info-row">
               <p className="personal-info-title">Fees to Pay</p>
-              <p className="personal-info">{programFee}</p>
+              <p className="personal-info">₦{programFee}</p>
             </li>
             <li className="personal-info-row">
               <p className="personal-info-title">Bank Name</p>
@@ -90,9 +101,7 @@ const Fees = ({ student }) => {
                 name="upload-fees"
                 id=""
                 onChange={(e) => {
-                  setPathToFee(
-                    `uploads/fees/${e.target.files[0].name}`
-                  );
+                  setPathToFee(`uploads/fees/${e.target.files[0].name}`);
                   setFeeFile(e.target.files[0]);
                 }}
               />
@@ -104,6 +113,34 @@ const Fees = ({ student }) => {
           {success && <div className="success">Fees indicated as paid</div>}
           {submitFail && <div className="error">{errMessage}</div>}
           <h1 className="landing-main-header-blue">Registration Status</h1>
+          <ul className="personal-info-list">
+            <li className="personal-info-row">
+              <p className="personal-info-title">Fees Payment Review Ongoing</p>
+              <p className="personal-info">
+                {regStatus.isPaying ? "Yes" : "No"}
+              </p>
+            </li>
+            <li className="personal-info-row">
+              <p className="personal-info-title">Fees Payment Approved</p>
+              <p className="personal-info">{regStatus.isPaid ? "Yes" : "No"}</p>
+            </li>
+            <li className="personal-info-row">
+              <p className="personal-info-title">
+                Semester Registration Review Ongoing
+              </p>
+              <p className="personal-info">
+                {regStatus.isRegistering ? "Yes" : "No"}
+              </p>
+            </li>
+            <li className="personal-info-row">
+              <p className="personal-info-title">
+                Semester Registration Approved
+              </p>
+              <p className="personal-info">
+                {regStatus.isRegistered ? "Yes" : "No"}
+              </p>
+            </li>
+          </ul>
         </section>
       )}
     </>
