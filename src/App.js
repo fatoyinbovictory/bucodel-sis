@@ -14,6 +14,7 @@ import StudentSelectSem from "./Pages/Student/SelectSem";
 import StudentSelectCourses from "./Pages/Student/SelectCourses";
 import StudentCourselist from "./Pages/Student/Courselist";
 import StudentSelectedCourses from "./Pages/Student/SelectedCourses";
+import StudentSpecificCourse from "./Pages/Student/SpecificCourse";
 import StudentSubmit from "./Pages/Student/Submit";
 import StudentFees from "./Pages/Student/Fees";
 import FacilitatorDashboard from "./Pages/Facilitator/Dashboard";
@@ -83,6 +84,13 @@ function App() {
             path="/student/courses"
             element={
               student ? <StudentCourses student={student} /> : <StudentLogin />
+            }
+          />
+           <Route
+            exact
+            path="/student/courses/:id"
+            element={
+              student ? <StudentSpecificCourse student={student} /> : <StudentLogin />
             }
           />
           <Route

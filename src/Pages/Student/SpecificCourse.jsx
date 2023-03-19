@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "../../Api/axios";
-import FacilitatorNav from "../../Components/FacilitatorNav";
+import StudentNav from "../../Components/StudentNav";
 
-const CourseDetails = () => {
+const SpecificCourse = () => {
   const [courseInfo, setCourseInfo] = useState();
   const [loading, setLoading] = useState(true);
   const [errMessage, setErrMessage] = useState();
@@ -22,7 +22,7 @@ const CourseDetails = () => {
     setLoadFail(false);
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/api/facilitator/course/${id}`);
+        const res = await axios.get(`/api/student/course/${id}`);
         setCourseInfo(res.data);
         setLoading(false);
       } catch (error) {
@@ -60,7 +60,7 @@ const CourseDetails = () => {
 
   return (
     <>
-      <FacilitatorNav />
+      <StudentNav />
       {loading ? (
         <div className="center-load">
           <div className="borders-profile"></div>
@@ -78,41 +78,33 @@ const CourseDetails = () => {
               <p className="personal-info">{courseInfo.courseCode}</p>
             </li>
             <li className="personal-info-row">
-              <p className="personal-info-title">Total Students</p>
-              <p className="personal-info">{courseInfo.students.length}</p>
+              <p className="personal-info-title">Facilitator</p>
+              <p className="personal-info">
+                {courseInfo.courseFacilitator.firstName}{" "}
+                {courseInfo.courseFacilitator.lastName}
+              </p>
             </li>
             <li className="personal-info-row">
               <p className="personal-info-title">Course Time</p>
               <p className="personal-info">{courseInfo.time || "Not Set"}</p>
             </li>
             <li className="personal-info-row">
-              <p className="personal-info-title">Set LMS Class Link</p>
-              <div className="form-wrap profile">
-                <div className="input-wrap">
-                  <input
-                    type="text"
-                    className="application-input"
-                    name="classlink"
-                    required
-                    onChange={(e) => setClassLink(e.target.value)}
-                  />
-                  <label htmlFor="classlink">Link</label>
-                </div>
-              </div>
-              <button className="apply-button centered" onClick={handleSubmit}>
-                {submitLoading ? <div className="borders"></div> : "Set"}
-              </button>
-              {success && (
-                <div className="success">Class Link set successfully</div>
-              )}
-              {submitFail && <div className="error">{errMessage}</div>}
+              <p className="personal-info-title">LMS Class Link</p>
+              <p className="personal-info">
+                {courseInfo.classLink ? (
+                  <a
+                    href={`https://${courseInfo.classLink}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="facilitator-link"
+                  >
+                    {courseInfo.classLink}
+                  </a>
+                ) : (
+                  "Not Set"
+                )}
+              </p>
             </li>
-            <Link
-              to={`/facilitator/course/students/${courseInfo._id}`}
-              className="facilitator-link"
-            >
-              View & Grade Students
-            </Link>
           </ul>
         </section>
       )}
@@ -120,4 +112,4 @@ const CourseDetails = () => {
   );
 };
 
-export default CourseDetails;
+export default SpecificCourse;

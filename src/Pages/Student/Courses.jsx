@@ -75,9 +75,11 @@ const Courses = ({ student }) => {
                     >
                       {course.creditHours}
                     </td>
-                    <td className="courses-table-data" data-label="More">
-                      <button className="courses-table-button">More</button>
-                    </td>
+                    <Link to={course._id}>
+                      <td className="courses-table-data" data-label="More">
+                        <button className="courses-table-button">More</button>
+                      </td>
+                    </Link>
                   </tr>
                 );
               })}

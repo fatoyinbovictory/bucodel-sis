@@ -103,6 +103,7 @@ const Fees = ({ student }) => {
           </button>
           {success && <div className="success">Fees indicated as paid</div>}
           {submitFail && <div className="error">{errMessage}</div>}
+          <h1 className="landing-main-header-blue">Registration Status</h1>
         </section>
       )}
     </>
