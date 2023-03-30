@@ -113,7 +113,7 @@ function App() {
           />
           <Route
             exact
-            path="/student/results/2023-2024-1"
+            path="/student/results/:id"
             element={
               student ? (
                 <StudentSpecificResult student={student} />
