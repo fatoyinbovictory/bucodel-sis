@@ -12,6 +12,7 @@ import appIcon from "../Icons/application.svg";
 import financeIcon from "../Icons/finance.svg";
 import academicIcon from "../Icons/academic.svg";
 import collateIcon from "../Icons/collate.svg";
+import newsIcon from "../Icons/news.svg"
 import dashboardIcon from "../Icons/dashboard.svg";
 import logoutIcon from "../Icons/logout.svg";
 import { ContextAdmin } from "../Context/Context";
@@ -97,8 +98,8 @@ const AdminNav = () => {
           </li>
           <li className="student-nav-item">
             <Link to="/admin/collate" className="profile-nav-link">
-              <img src={collateIcon} alt="personal" />
-              <p className="profile-nav-link-name">Collate & Post Results</p>
+              <img src={newsIcon} alt="personal" />
+              <p className="profile-nav-link-name">Newsroom</p>
             </Link>
           </li>
           <li className="student-nav-item logout" onClick={logOut}>
