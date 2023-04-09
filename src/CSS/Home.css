@@ -29,6 +29,12 @@ main {
   margin: 20px 0 0 0;
 }
 
+.landing-main-header-blue-min {
+  font-size: 2.2rem;
+  color: var(--blue);
+  margin: 20px 0 0 -20px;
+}
+
 .apply-step-count {
   color: rgb(109, 109, 109);
 }
@@ -112,7 +118,7 @@ main {
   margin: 10px 0;
 }
 
-.upload-label{
+.upload-label {
   color: var(--blue);
   font-weight: 600;
   font-size: 1.2rem;
