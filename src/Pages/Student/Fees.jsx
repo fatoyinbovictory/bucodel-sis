@@ -66,12 +66,20 @@ const Fees = ({ student }) => {
           headers: { "Content-type": "application/json" }
         }
       );
+      await axios.patch(
+        `/api/student/feePayment/${student.id}`,
+        JSON.stringify({ feePaid }),
+        {
+          headers: { "Content-type": "application/json" }
+        }
+      );
       setSuccess(true);
       setSubmitLoading(false);
       setSubmitFail(false);
     } catch (error) {
       setSubmitFail(true);
       setSubmitLoading(false);
+      console.log(error);
       console.log(error);
       setErrMessage(error.response.data.error);
     }
@@ -100,9 +108,25 @@ const Fees = ({ student }) => {
                   currency: "NGN"
                 }).format(fee)}
               </p>
+              <p className="personal-info">
+                {new Intl.NumberFormat("en-NG", {
+                  style: "currency",
+                  currency: "NGN"
+                }).format(fee)}
+              </p>
             </li>
             <h2 className="landing-main-header-blue-min">Pay with Paystack</h2>
+            <h2 className="landing-main-header-blue-min">Pay with Paystack</h2>
           </ul>
+          <PaystackButton className="btn-medium centered" {...componentProps} />
+          {submitLoading && <div className="borders"></div> }
+
+          {success && (
+            <div className="success">
+              Fees Paid! Check your email for your receipt, and check this page
+              for your approval status
+            </div>
+          )}
           <PaystackButton className="btn-medium centered" {...componentProps} />
           {submitLoading && <div className="borders"></div> }
 
