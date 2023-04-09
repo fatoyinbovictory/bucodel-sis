@@ -26,8 +26,6 @@ const ApplicationForm = () => {
   const [password, setPassword] = useState();
   const [ssceFile, setSsceFile] = useState();
   const [pathToSsce, setPathToSsce] = useState();
-  const [utmeFile, setUtmeFile] = useState();
-  const [pathToUtme, setPathToUtme] = useState();
 
   const handleSubmit = async () => {
     const formData = new FormData();
@@ -47,8 +45,6 @@ const ApplicationForm = () => {
     formData.append("password", password);
     formData.append("ssceFile", ssceFile);
     formData.append("pathToSsce", pathToSsce);
-    formData.append("utmeFile", utmeFile);
-    formData.append("pathToUtme", pathToUtme);
     setSubmitLoading(true);
     setSubmitFail(false);
     try {
@@ -306,25 +302,6 @@ const ApplicationForm = () => {
               onChange={(e) => {
                 setPathToSsce(`uploads/applications/${e.target.files[0].name}`);
                 setSsceFile(e.target.files[0]);
-              }}
-            />
-          </div>
-        </div>
-      </div>
-      <div className="form-row">
-        <div className="form-wrap">
-          <label className="upload-label" htmlFor="lastName">
-            Upload Your UTME Result in PDF Format
-          </label>
-          <div className="input-wrap">
-            <input
-              type="file"
-              className="application-input-file"
-              name="middleName"
-              required
-              onChange={(e) => {
-                setPathToUtme(`uploads/applications/${e.target.files[0].name}`);
-                setUtmeFile(e.target.files[0]);
               }}
             />
           </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "../../Api/axios";
 import StudentNav from "../../Components/StudentNav";
 
@@ -10,6 +10,7 @@ const SpecificResult = ({ student }) => {
   const [studentCredit, setStudentCredit] = useState(0);
   const [errMessage, setErrMessage] = useState();
   const [loadFail, setLoadFail] = useState(false);
+  const { id: semId } = useParams();
 
   useEffect(() => {
     document.title = "Student's Results";
@@ -19,7 +20,13 @@ const SpecificResult = ({ student }) => {
     setLoadFail(false);
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/api/student/viewResults/${student.id}`);
+        const res = await axios.post(
+          `/api/student/viewResults/${student.id}`,
+          JSON.stringify({ semId }),
+          {
+            headers: { "Content-type": "application/json" }
+          }
+        );
         setResult(res.data);
         setLoading(false);
         console.log(res.data);

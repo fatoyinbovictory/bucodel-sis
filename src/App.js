@@ -24,7 +24,8 @@ import FacilitatorCourseDetails from "./Pages/Facilitator/CourseDetails";
 import FacilitatorCourseStudents from "./Pages/Facilitator/CourseStudents";
 import AdminDashboard from "./Pages/Admin/Dashboard";
 import AdminDetails from "./Pages/Admin/Details";
-import AdminSemester from "./Pages/Admin/CreateSemester";
+import AdminSemesters from "./Pages/Admin/Semesters";
+import AdminCreateSemester from "./Pages/Admin/CreateSemester";
 import AdminPrograms from "./Pages/Admin/Programs";
 import AdminCreateProgram from "./Pages/Admin/CreateProgram";
 import AdminSpecificProgram from "./Pages/Admin/SpecificProgram";
@@ -247,8 +248,13 @@ function App() {
           />
           <Route
             exact
-            path="/admin/semester"
-            element={admin ? <AdminSemester admin={admin} /> : <AdminLogin />}
+            path="/admin/semesters"
+            element={admin ? <AdminSemesters admin={admin} /> : <AdminLogin />}
+          />
+           <Route
+            exact
+            path="/admin/semesters/create"
+            element={admin ? <AdminCreateSemester admin={admin} /> : <AdminLogin />}
           />
           <Route
             exact

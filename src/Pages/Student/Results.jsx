@@ -4,7 +4,8 @@ import axios from "../../Api/axios";
 import StudentNav from "../../Components/StudentNav";
 
 const Results = ({ student }) => {
-  const [result, setResult] = useState();
+  const [courses, setCourses] = useState();
+  const [semesters, setSemesters] = useState();
   const [loading, setLoading] = useState(true);
   const [errMessage, setErrMessage] = useState();
   const [loadFail, setLoadFail] = useState(false);
@@ -20,7 +21,8 @@ const Results = ({ student }) => {
         const res = await axios.get(
           `/api/student/resultOverview/${student.id}`
         );
-        setResult(res.data);
+        setCourses(res.data.courses);
+        setSemesters(res.data.semesterId);
         setLoading(false);
         console.log(res.data);
       } catch (error) {
@@ -56,23 +58,30 @@ const Results = ({ student }) => {
               </tr>
             </thead>
             <tbody>
-              <tr className="courses-table-row">
-                <td className="courses-table-data" data-label="Semester">
-                  {result.semester}
-                </td>
-                <td className="courses-table-data" data-label="Level">
-                  100
-                </td>
-                <td className="courses-table-data" data-label="Semester No. of Courses">
-                  {result.courses.length}
-                </td>
-                <td className="courses-table-data" data-label="">
-                  {/* <button className="courses-table-button">More</button> */}
-                  <Link to={result._id}>
-                    <button className="courses-table-button">More</button>
-                  </Link>
-                </td>
-              </tr>
+              {semesters.map((semester) => {
+                return (
+                  <tr className="courses-table-row" key={semester._id}>
+                    <td className="courses-table-data" data-label="Semester">
+                      {`${semester.semester}.${semester.session}`}
+                    </td>
+                    <td className="courses-table-data" data-label="Level">
+                      100
+                    </td>
+
+                    <td
+                      className="courses-table-data"
+                      data-label="Semester No. of Courses"
+                    >
+                      {courses.length}
+                    </td>
+                    <td className="courses-table-data">
+                      <Link to={semester._id}>
+                        <button className="courses-table-button">More</button>
+                      </Link>
+                    </td>
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </section>

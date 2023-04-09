@@ -55,9 +55,9 @@ const AdminNav = () => {
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/semester" className="profile-nav-link">
+            <Link to="/admin/semesters" className="profile-nav-link">
               <img src={createIcon} alt="personal" />
-              <p className="profile-nav-link-name">Create Semester</p>
+              <p className="profile-nav-link-name">Semesters</p>
             </Link>
           </li>
           <li className="student-nav-item">
