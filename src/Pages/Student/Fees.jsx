@@ -1,19 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { PaystackButton } from "react-paystack";
 import axios from "../../Api/axios";
 import StudentNav from "../../Components/StudentNav";
 
 const Fees = ({ student }) => {
-  const [programFee, setProgramFee] = useState();
+  const [fee, setFee] = useState();
+  const [amount, setAmount] = useState();
   const [regStatus, setRegStatus] = useState();
-  const [feeFile, setFeeFile] = useState();
-  const [pathToFee, setPathToFee] = useState();
   const [loading, setLoading] = useState(true);
   const [errMessage, setErrMessage] = useState();
   const [loadFail, setLoadFail] = useState(false);
   const [success, setSuccess] = useState(false);
   const [submitFail, setSubmitFail] = useState(false);
   const [submitLoading, setSubmitLoading] = useState(false);
+  const email = student.email;
 
   useEffect(() => {
     setLoadFail(false);
@@ -26,7 +27,7 @@ const Fees = ({ student }) => {
             headers: { "Content-type": "application/json" }
           }
         );
-        setProgramFee(res.data.programFee);
+        setFee(parseInt(res.data.programFee));
         // setLoading(false);
       } catch (error) {
         setLoadFail(true);
@@ -47,22 +48,31 @@ const Fees = ({ student }) => {
     fetchData();
   }, []);
 
-  const handleSubmit = async () => {
-    const formData = new FormData();
-    formData.append("pathToFee", pathToFee);
-    formData.append("feeFile", feeFile);
-    setSubmitLoading(true);
-    setSubmitFail(false);
+  const componentProps = {
+    email: "vicfatoyinbo@gmail.com",
+    amount: fee * 100,
+    publicKey: "pk_test_a22e5a1f62574c8718ce241d07cd28f29fa6f389",
+    text: "Pay Semester Fees",
+    onSuccess: () => handleSubmit(fee),
+    onClose: () => alert("Are you sure you want to close this window?")
+  };
+
+  const handleSubmit = async (feePaid) => {
     try {
-      await axios.patch(`/api/student/feePayment/${student.id}`, formData, {
-        headers: { "Content-type": "multipart/form-data" }
-      });
+      await axios.patch(
+        `/api/student/feePayment/${student.id}`,
+        JSON.stringify({ feePaid }),
+        {
+          headers: { "Content-type": "application/json" }
+        }
+      );
       setSuccess(true);
       setSubmitLoading(false);
       setSubmitFail(false);
     } catch (error) {
       setSubmitFail(true);
       setSubmitLoading(false);
+      console.log(error);
       setErrMessage(error.response.data.error);
     }
   };
@@ -84,33 +94,24 @@ const Fees = ({ student }) => {
           <ul className="personal-info-list">
             <li className="personal-info-row">
               <p className="personal-info-title">Fees to Pay</p>
-              <p className="personal-info">₦{programFee}</p>
+              <p className="personal-info">
+                {new Intl.NumberFormat("en-NG", {
+                  style: "currency",
+                  currency: "NGN"
+                }).format(fee)}
+              </p>
             </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Bank Name</p>
-              <p className="personal-info">Babcock Microfinance Bank</p>
-            </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Bank Account Number</p>
-              <p className="personal-info">0039474849</p>
-            </li>
-            <li className="personal-info-row">
-              <p className="personal-info-title">Upload Evidence of Payment</p>
-              <input
-                type="file"
-                name="upload-fees"
-                id=""
-                onChange={(e) => {
-                  setPathToFee(`uploads/fees/${e.target.files[0].name}`);
-                  setFeeFile(e.target.files[0]);
-                }}
-              />
-            </li>
+            <h2 className="landing-main-header-blue-min">Pay with Paystack</h2>
           </ul>
-          <button className="btn-medium centered" onClick={handleSubmit}>
-            {submitLoading ? <div className="borders"></div> : "Submit"}
-          </button>
-          {success && <div className="success">Fees indicated as paid</div>}
+          <PaystackButton className="btn-medium centered" {...componentProps} />
+          {submitLoading && <div className="borders"></div> }
+
+          {success && (
+            <div className="success">
+              Fees Paid! Check your email for your receipt, and check this page
+              for your approval status
+            </div>
+          )}
           {submitFail && <div className="error">{errMessage}</div>}
           <h1 className="landing-main-header-blue">Registration Status</h1>
           <ul className="personal-info-list">
