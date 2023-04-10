@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import axios from "../../Api/axios";
-import AdminNav from "../../Components/AdminNav";
+import StudentNav from "../../Components/StudentNav";
 
 const Newspost = () => {
   const [newspost, setNewspost] = useState();
@@ -18,7 +18,7 @@ const Newspost = () => {
     setLoadFail(false);
     const fetchData = async () => {
       try {
-        const res = await axios.get(`/api/admin/viewNews/${id}`);
+        const res = await axios.get(`/api/student/viewNews/${id}`);
         setNewspost(res.data);
         console.log(res.data);
         setLoading(false);
@@ -33,7 +33,7 @@ const Newspost = () => {
 
   return (
     <>
-      <AdminNav />
+      <StudentNav />
       {loading ? (
         <div className="center-load">
           <div className="borders-profile"></div>
@@ -53,12 +53,6 @@ const Newspost = () => {
             </h4>
             <br />
             <p className="news-body">{newspost.body}</p>
-            <div>
-              <Link to="update">
-                <button className="courses-table-button">Update Post</button>
-              </Link>
-              <button className="courses-table-button red2">Delete Post</button>
-            </div>
             <br />
           </div>
         </section>

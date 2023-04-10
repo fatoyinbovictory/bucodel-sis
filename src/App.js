@@ -17,6 +17,8 @@ import StudentSelectedCourses from "./Pages/Student/SelectedCourses";
 import StudentSpecificCourse from "./Pages/Student/SpecificCourse";
 import StudentSubmit from "./Pages/Student/Submit";
 import StudentFees from "./Pages/Student/Fees";
+import StudentNewsroom from "./Pages/Student/Newsroom";
+import StudentNewspost from "./Pages/Student/Newspost";
 import FacilitatorDashboard from "./Pages/Facilitator/Dashboard";
 import FacilitatorDetails from "./Pages/Facilitator/Details";
 import FacilitatorCourses from "./Pages/Facilitator/Courses";
@@ -187,6 +189,20 @@ function App() {
             path="/student/fees"
             element={
               student ? <StudentFees student={student} /> : <StudentLogin />
+            }
+          />
+          <Route
+            exact
+            path="/student/newsroom"
+            element={
+              student ? <StudentNewsroom student={student} /> : <StudentLogin />
+            }
+          />
+          <Route
+            exact
+            path="/student/newsroom/:id"
+            element={
+              student ? <StudentNewspost student={student} /> : <StudentLogin />
             }
           />
           <Route

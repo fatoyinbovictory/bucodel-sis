@@ -7,6 +7,7 @@ import dashboardIcon from "../Icons/dashboard.svg";
 import financeIcon from "../Icons/finance.svg";
 import registerIcon from "../Icons/registration.svg";
 import caretIcon from "../Icons/caret-down-fill.svg";
+import newsIcon from "../Icons/news.svg"
 import logoutIcon from "../Icons/logout.svg";
 import { Context } from "../Context/Context";
 import "../CSS/StudentNav.css";
@@ -103,6 +104,12 @@ const StudentNav = () => {
             <Link to="/student/fees" className="profile-nav-link">
               <img src={financeIcon} alt="personal" />
               <p className="profile-nav-link-name">Fees & Payments</p>
+            </Link>
+          </li>
+          <li className="student-nav-item">
+            <Link to="/student/newsroom" className="profile-nav-link">
+              <img src={newsIcon} alt="personal" />
+              <p className="profile-nav-link-name">Newsroom</p>
             </Link>
           </li>
           <li className="student-nav-item logout" onClick={logOut}>
