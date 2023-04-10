@@ -97,7 +97,7 @@ const AdminNav = () => {
             </Link>
           </li>
           <li className="student-nav-item">
-            <Link to="/admin/collate" className="profile-nav-link">
+            <Link to="/admin/newsroom" className="profile-nav-link">
               <img src={newsIcon} alt="personal" />
               <p className="profile-nav-link-name">Newsroom</p>
             </Link>

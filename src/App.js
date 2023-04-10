@@ -30,7 +30,7 @@ import AdminPrograms from "./Pages/Admin/Programs";
 import AdminCreateProgram from "./Pages/Admin/CreateProgram";
 import AdminSpecificProgram from "./Pages/Admin/SpecificProgram";
 import AdminCreateCourse from "./Pages/Admin/CreateCourse";
-import AdminCourseDetails from "./Pages/Admin/CourseDetails"
+import AdminCourseDetails from "./Pages/Admin/CourseDetails";
 import AdminFacilitators from "./Pages/Admin/Facilitators";
 import AdminCreateFacilitator from "./Pages/Admin/CreateFacilitator";
 import AdminStudents from "./Pages/Admin/Students";
@@ -41,6 +41,10 @@ import AdminRegistration from "./Pages/Admin/Registrations";
 import AdminStudentReg from "./Pages/Admin/StudentReg";
 import AdminFees from "./Pages/Admin/Fees";
 import AdminStudentFees from "./Pages/Admin/StudentFees";
+import AdminNewsroom from "./Pages/Admin/Newsroom";
+import AdminNewspost from "./Pages/Admin/Newspost";
+import AdminCreateNewspost from "./Pages/Admin/CreateNews";
+import AdminUpdateNewspost from "./Pages/Admin/UpdateNewspost";
 import { Context, ContextFacilitator, ContextAdmin } from "./Context/Context";
 import { useContext } from "react";
 
@@ -87,11 +91,15 @@ function App() {
               student ? <StudentCourses student={student} /> : <StudentLogin />
             }
           />
-           <Route
+          <Route
             exact
             path="/student/courses/:id"
             element={
-              student ? <StudentSpecificCourse student={student} /> : <StudentLogin />
+              student ? (
+                <StudentSpecificCourse student={student} />
+              ) : (
+                <StudentLogin />
+              )
             }
           />
           <Route
@@ -251,10 +259,12 @@ function App() {
             path="/admin/semesters"
             element={admin ? <AdminSemesters admin={admin} /> : <AdminLogin />}
           />
-           <Route
+          <Route
             exact
             path="/admin/semesters/create"
-            element={admin ? <AdminCreateSemester admin={admin} /> : <AdminLogin />}
+            element={
+              admin ? <AdminCreateSemester admin={admin} /> : <AdminLogin />
+            }
           />
           <Route
             exact
@@ -349,6 +359,30 @@ function App() {
             path="/admin/fees/:id"
             element={
               admin ? <AdminStudentFees admin={admin} /> : <AdminLogin />
+            }
+          />
+          <Route
+            exact
+            path="/admin/newsroom"
+            element={admin ? <AdminNewsroom admin={admin} /> : <AdminLogin />}
+          />
+          <Route
+            exact
+            path="/admin/newsroom/:id"
+            element={admin ? <AdminNewspost admin={admin} /> : <AdminLogin />}
+          />
+          <Route
+            exact
+            path="/admin/newsroom/create"
+            element={
+              admin ? <AdminCreateNewspost admin={admin} /> : <AdminLogin />
+            }
+          />
+          <Route
+            exact
+            path="/admin/newsroom/:id/update"
+            element={
+              admin ? <AdminUpdateNewspost admin={admin} /> : <AdminLogin />
             }
           />
         </Routes>

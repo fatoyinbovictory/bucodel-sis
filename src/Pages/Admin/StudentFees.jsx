@@ -114,14 +114,15 @@ const StudentFees = () => {
               <p className="personal-info-title">Semester</p>
               <p className="personal-info">{student.semester}</p>
             </li>
-            <br />
-            <a
-              href={`http://localhost:5000/${student.pathToFee}`}
-              target="_blank"
-              className="facilitator-link"
-            >
-              View {student.firstName}'s uploaded Fee Payment Evidence
-            </a> <br /><br />
+            <li className="personal-info-row">
+              <p className="personal-info-title">Amount Paid</p>
+              <p className="personal-info">
+                {new Intl.NumberFormat("en-NG", {
+                  style: "currency",
+                  currency: "NGN"
+                }).format(student.feePaid)}
+              </p>
+            </li>
           </ul>
           <button
             className="btn-medium centered"

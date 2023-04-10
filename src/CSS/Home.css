@@ -152,6 +152,15 @@ main {
   box-shadow: none;
 }
 
+.application-input.text-area {
+  height: unset;
+  width: unset;
+}
+
+.application-input.text-area::placeholder {
+  font-size: 16px;
+  color: var(--blue);
+}
 select {
   height: 52px !important;
   width: 325px !important;
@@ -190,7 +199,6 @@ input[type="email"] ~ label {
 }
 
 .input-wrap label {
-  font-family: arial;
   font-size: 16px;
   color: var(--blue);
   padding: 14px;

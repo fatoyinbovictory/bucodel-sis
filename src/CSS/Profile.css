@@ -121,6 +121,10 @@
 .courses-table-button.red {
   background-color: var(--red);
 }
+.courses-table-button.red2{
+  background-color: var(--red);
+  margin-left: 30px;
+}
 
 .courses-table-button.top {
   margin-bottom: 20px;
@@ -252,6 +256,48 @@ input[type="file"]::file-selector-button {
   place-content: center;
 }
 
+.news-container {
+  display: grid;
+  width: 92vw;
+  place-items: center;
+}
+
+.news-post {
+  background: #fff;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  margin: 20px;
+  min-width: 600px;
+  max-width: 900px;
+}
+
+.news-heading {
+  margin: 2px;
+  font-size: 1.8rem;
+  color: var(--blue);
+}
+
+.news-author {
+  margin: 2px 2px 15px;
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgb(97, 97, 97);
+}
+
+.news-link {
+  font-size: 1rem;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.news-body{
+  padding: 0px 100px;
+  white-space: pre-wrap;
+  font-size: 1.2rem
+}
+
 @media screen and (max-width: 750px) {
   .profile-container {
     left: 0;
@@ -278,6 +324,19 @@ input[type="file"]::file-selector-button {
   .card-container {
     width: 98vw;
     justify-content: center;
+  }
+  .news-container {
+    width: 98vw;
+  }
+  .news-post {
+    min-width: 250px;
+  }
+  .news-body{
+    padding: 1rem;
+    font-size: 1rem;
+  }
+  .courses-table-button.red2{
+    margin-left: 10px;
   }
 }
 
