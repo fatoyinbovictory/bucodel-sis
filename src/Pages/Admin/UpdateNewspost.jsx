@@ -38,12 +38,13 @@ const UpdateNews = () => {
     fetchData();
   }, []);
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
     setSubmitLoading(true);
     setSubmitFail(false);
     try {
       await axios.patch(
-        `/api/admin/updateNews/:id`,
+        `/api/admin/updateNews/${id}`,
         JSON.stringify({ heading, author, body }),
         {
           headers: { "Content-type": "application/json" }
@@ -76,55 +77,57 @@ const UpdateNews = () => {
         </div>
       ) : (
         <section className="profile-container news-container loaded">
-          <h1 className="landing-main-header-blue">Create News Post</h1>
-          <div className="form-wrap">
-            <div className="input-wrap">
-              <input
-                type="text"
-                className="application-input"
-                name="heading"
-                required
-                value={newspost.heading}
-                onChange={(e) => setHeading(e.target.value)}
-              />
-              <label htmlFor="heading">Post Title</label>
+          <h1 className="landing-main-header-blue">Update News Post</h1>
+          <form className="news-container">
+            <div className="form-wrap">
+              <div className="input-wrap">
+                <input
+                  type="text"
+                  className="application-input"
+                  name="heading"
+                  required
+                  defaultValue={newspost.heading}
+                  onChange={(e) => setHeading(e.target.value)}
+                />
+                <label htmlFor="heading">Post Title</label>
+              </div>
             </div>
-          </div>
-          <div className="form-wrap">
-            <div className="input-wrap">
-              <input
-                type="text"
-                className="application-input"
-                name="author"
-                required
-                value={newspost.author}
-                onChange={(e) => setAuthor(e.target.value)}
-              />
-              <label htmlFor="author">Post Author</label>
+            <div className="form-wrap">
+              <div className="input-wrap">
+                <input
+                  type="text"
+                  className="application-input"
+                  name="author"
+                  required
+                  defaultValue={newspost.author}
+                  onChange={(e) => setAuthor(e.target.value)}
+                />
+                <label htmlFor="author">Post Author</label>
+              </div>
             </div>
-          </div>
-          <div className="form-wrap">
-            <div className="input-wrap">
-              <textarea
-                name="body"
-                id="body"
-                cols="50"
-                rows="15"
-                className="application-input text-area"
-                placeholder="Post Body"
-                value={newspost.body}
-                onChange={(e) => setBody(e.target.value)}
-              ></textarea>
+            <div className="form-wrap">
+              <div className="input-wrap">
+                <textarea
+                  name="body"
+                  id="body"
+                  cols="50"
+                  rows="15"
+                  className="application-input text-area"
+                  placeholder="Post Body"
+                  defaultValue={newspost.body}
+                  onChange={(e) => setBody(e.target.value)}
+                ></textarea>
+              </div>
             </div>
-          </div>
-          <button className="btn-medium centered" onClick={handleSubmit}>
-            {submitLoading ? (
-              <div className="borders "></div>
-            ) : (
-              "Create News Post"
-            )}
-          </button>
-          {success && <div className="success">Post created successfully</div>}
+            <button className="btn-medium centered" onClick={handleSubmit}>
+              {submitLoading ? (
+                <div className="borders "></div>
+              ) : (
+                "Update News Post"
+              )}
+            </button>
+          </form>
+          {success && <div className="success">Post updated successfully</div>}
           {submitFail && <div className="error">{errMessage}</div>}
         </section>
       )}
