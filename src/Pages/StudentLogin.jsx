@@ -52,38 +52,40 @@ const StudentLogin = () => {
     <>
       <HomeNavBar />
       <section className="login-form">
-        <h1 className="landing-main-header">Students</h1>
-        <div className="login-form-row">
-          <div className="form-wrap">
-            <div className="input-wrap">
-              <input
-                type="text"
-                className="application-input"
-                name="email"
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <label htmlFor="email">Email</label>
+        <form className="login-form">
+          <h1 className="landing-main-header">Students</h1>
+          <div className="login-form-row">
+            <div className="form-wrap">
+              <div className="input-wrap">
+                <input
+                  type="text"
+                  className="application-input"
+                  name="email"
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+                <label htmlFor="email">Email</label>
+              </div>
+            </div>
+            <div className="form-wrap">
+              <div className="input-wrap">
+                <input
+                  type="password"
+                  className="application-input"
+                  name="password"
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+                <label htmlFor="password">Password</label>
+              </div>
             </div>
           </div>
-          <div className="form-wrap">
-            <div className="input-wrap">
-              <input
-                type="password"
-                className="application-input"
-                name="password"
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-              <label htmlFor="password">Password</label>
-            </div>
-          </div>
-        </div>
-        <button className="login-btn" onClick={handleSubmit}>
-          {loading ? <div className="borders"></div> : "Login"}
-        </button>
-        {/* <div className="success">This is a success message</div> */}
-        {loginFail && <div className="error">{errMessage}</div>}
+          <button className="login-btn" onClick={handleSubmit}>
+            {loading ? <div className="borders"></div> : "Login"}
+          </button>
+          {/* <div className="success">This is a success message</div> */}
+          {loginFail && <div className="error">{errMessage}</div>}
+        </form>
       </section>
       <Footer />
     </>

@@ -47,7 +47,7 @@ const CreateFacilitator = () => {
     <>
       <AdminNav />
       <section className="profile-container loaded">
-        <h1 className="landing-main-header-blue">Create Facilitator Account</h1>
+        <h1 className="landing-main-header-blue">Create Facilitator/e-Tutor Account</h1>
         <div className="form-wrap">
           <div className="input-wrap">
             <input

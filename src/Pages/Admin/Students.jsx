@@ -43,6 +43,9 @@ const Students = () => {
       ) : (
         <section className="profile-container loaded">
           <h1 className="landing-main-header-blue">Students</h1>
+          <Link to="create">
+            <button className="courses-table-button top">Create</button>
+          </Link>
           <table className="courses-table">
             <thead>
               <tr className="courses-table-row">

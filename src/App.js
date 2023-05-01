@@ -47,6 +47,7 @@ import AdminNewsroom from "./Pages/Admin/Newsroom";
 import AdminNewspost from "./Pages/Admin/Newspost";
 import AdminCreateNewspost from "./Pages/Admin/CreateNews";
 import AdminUpdateNewspost from "./Pages/Admin/UpdateNewspost";
+import AdminCreateStudent from "./Pages/Admin/CreateStudent";
 import { Context, ContextFacilitator, ContextAdmin } from "./Context/Context";
 import { useContext } from "react";
 
@@ -339,6 +340,13 @@ function App() {
             path="/admin/students/:id"
             element={
               admin ? <AdminStudentDetails admin={admin} /> : <AdminLogin />
+            }
+          />
+            <Route
+            exact
+            path="/admin/students/create"
+            element={
+              admin ? <AdminCreateStudent admin={admin} /> : <AdminLogin />
             }
           />
           <Route

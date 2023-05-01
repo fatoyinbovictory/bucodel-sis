@@ -43,7 +43,7 @@ const Facilitators = () => {
         </div>
       ) : (
         <section className="profile-container loaded">
-          <h1 className="landing-main-header-blue">Facilitators</h1>
+          <h1 className="landing-main-header-blue">Facilitators/e-Tutors</h1>
           <Link to="create">
             <button className="courses-table-button top">Create</button>
           </Link>
